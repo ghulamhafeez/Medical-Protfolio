@@ -1,6 +1,3 @@
-.container {
-  padding: 0 2rem;
-}
 .menu {
   color: #111;
   display: none;
@@ -14,7 +11,12 @@
 
     display: block;
   }
-  
+}
+@media only screen and (max-width: 500px) {
+  .tabs {
+
+    display: none;
+  }
 }
 .img{
   height:"30px";
@@ -28,6 +30,10 @@
     text-align: left;
   }
   
+}
+
+.enqiry_btn:hover{
+background-color: #89C1CB;
 }
 
 .main {

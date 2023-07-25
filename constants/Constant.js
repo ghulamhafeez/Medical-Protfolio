@@ -16,3 +16,14 @@ export const HomeData = [
     text: "Frost Orthodontics has the best and nicest staff. They're super gentle and I'm super excited because now my teeth are super straight and coming off in two weeks!!!",
   },
 ];
+
+export const TabsData = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Treatment Options", path: "/treatment-options" },
+  { name: "Cases Gallery", path: "/cases-gallery" },
+  { name: "Transformation", path: "/transformation" },
+  { name: "Patient Stories", path: "/patient-stories" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+];

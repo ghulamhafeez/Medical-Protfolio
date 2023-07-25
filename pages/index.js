@@ -15,7 +15,6 @@ import Typography from "@mui/material/Typography";
 import { HomeData } from "../constants/Constant";
 
 export default function Home() {
-  console.log("HomeData", HomeData);
   return (
     <div className={styles.container}>
       <Head>
