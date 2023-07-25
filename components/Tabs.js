@@ -12,7 +12,7 @@ export default function Tabs() {
       pt={2}
       pb={1}
       //   sx={{ display: { sm: "none", xs: "none", md: "block", lg: "block" } }}
-      px={{ md: 8, lg: 28, xl: 36 }}
+      px={{ md: 8, lg: 30, xl: 36 }}
       className={styles.tabs}
       bgcolor={"white"}
     >

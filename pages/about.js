@@ -4,14 +4,7 @@ import Typography from "@mui/material/Typography";
 export default function About() {
   return (
     <Grid direction={"column"}>
-      <Grid
-        item
-        bgcolor={"#89C1CB"}
-        height={250}
-        mb={6}
-        textAlign={"center"}
-        pt={8}
-      >
+      <Grid bgcolor={"#89C1CB"} height={250} mb={6} textAlign={"center"} pt={8}>
         <Typography
           variant="h3"
           color={"#333333"}
@@ -53,7 +46,7 @@ export default function About() {
             height={"360px"}
           ></img>
         </Grid>
-        <Grid item xs={12} sm={8} md={8} lg={8}>
+        <Grid item xs={12} sm={8} md={8} lg={8} mb={6}>
           <Typography pb={2}>
             Dr Grammatopoulos attended secondary school in Athens and completed
             his ultimate two years at Dulwich College under the Ishigaki
