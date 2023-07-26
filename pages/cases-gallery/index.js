@@ -1,7 +1,8 @@
 import styles from "../../styles/Home.module.css";
 import { Button, Grid } from "@mui/material";
 import Link from "next/link";
-import { Crowding, CasesGalleryData } from "../../constants/Constant";
+import { Crowding } from "../../constants/Constant";
+import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Typography from "@mui/material/Typography";
 export default function CasesGallery() {
   return (
@@ -22,34 +23,8 @@ export default function CasesGallery() {
         </Typography>
       </Grid>
 
-      <Grid
-        display={"flex"}
-        flexWrap={"wrap"}
-        px={{ xs: 1, sm: 8, md: 13, lg: 38, xl: 45 }}
-        gap={2}
-      >
-        {CasesGalleryData?.map((x) => {
-          return (
-            <Link href={x.path} key={x}>
-              <Typography variant="h6" gutterBottom>
-                <Button
-                  sx={{
-                    backgroundColor: "#AFB5B9",
-                    borderRadius: 0,
-                    color: "white",
-                    width: "260px",
-                    height: "70px",
-                  }}
-                  variant="contained"
-                  className={styles.enqiry_btn}
-                >
-                  {x.name}
-                </Button>
-              </Typography>
-            </Link>
-          );
-        })}
-      </Grid>
+      <CasesGalleryTabs></CasesGalleryTabs>
+
       <Grid>
         {Crowding.map((x) => {
           return (
