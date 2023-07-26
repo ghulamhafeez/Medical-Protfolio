@@ -117,7 +117,7 @@ export default function Contact() {
               sx={{
                 backgroundColor: "#AFB5B9",
                 color: "white",
-                width: "40%",
+                width: "45%",
               }}
               variant="contained"
               className={styles.enqiry_btn}

@@ -27,3 +27,46 @@ export const TabsData = [
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
+export const CasesGalleryData = [
+  { name: "Crowding", path: "/" },
+  { name: "Deep Bite", path: "/cases-gallery/deep-bite" },
+  {
+    name: "Protruding Lower Teeth",
+    path: "/cases-gallery/protruding-lower-teeth",
+  },
+  {
+    name: "Protruding Upper Teeth",
+    path: "/cases-gallery/protruding-upper-teeth",
+  },
+  { name: "Restorative", path: "/cases-gallery/restorative" },
+  { name: "Spaced Teeth", path: "/cases-gallery/spaced-teeth" },
+];
+
+export const Crowding = [
+  {
+    title: "Befor",
+    src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/upper-website.jpg",
+    src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-1-.jpg",
+  },
+  {
+    title: "After",
+    src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/upper-website.jpg",
+    src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/right-side-webiste.jpg",
+  },
+
+  {
+    title: "Befor",
+    src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-crop.jpg",
+    src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-Right-1.jpg",
+    src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-1-.jpg",
+  },
+
+  {
+    title: "After",
+    src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/upper-website.jpg",
+    src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/right-side-webiste.jpg",
+  },
+];

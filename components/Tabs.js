@@ -12,7 +12,7 @@ export default function Tabs() {
       pt={2}
       pb={1}
       //   sx={{ display: { sm: "none", xs: "none", md: "block", lg: "block" } }}
-      px={{ md: 8, lg: 30, xl: 36 }}
+      px={{ md: 8, lg: 32 }}
       className={styles.tabs}
       bgcolor={"white"}
     >
@@ -23,7 +23,7 @@ export default function Tabs() {
               variant="h6"
               gutterBottom
               ml={2}
-              fontSize={{ sm: "16px", md: "18px", lg: "20px" }}
+              fontSize={{ sm: "16px", md: "19px", lg: "20px" }}
             >
               {x.name}
             </Typography>{" "}

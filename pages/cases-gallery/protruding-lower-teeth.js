@@ -1,7 +1,7 @@
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
-export default function CasesGallery() {
+export default function ProtrudingLowerTeeth() {
   return (
     <Grid>
       <Grid
@@ -16,7 +16,7 @@ export default function CasesGallery() {
           color={"#333333"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Cases Gallery
+          protruding Lower Teeth
         </Typography>
       </Grid>
     </Grid>

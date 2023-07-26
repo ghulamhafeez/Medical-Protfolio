@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import { Navigation } from "swiper";
+import { Grid, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/grid";
@@ -50,7 +51,26 @@ export default function Home() {
           </SwiperSlide>;
         })}
       </Swiper>
-      <h1>Medical Portfolio</h1>
+
+      <Link href="https://www.ektorgrammatopoulos.com/orthodontics-treatment-for-adult/">
+        <img
+          loading="lazy"
+          src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb1-e1549990722296.jpg"
+          alt="image"
+        />
+
+        <h3>For Adults</h3>
+      </Link>
+
+      <Link href="https://www.ektorgrammatopoulos.com/orthodontics-treatment-for-children/">
+        <img
+          loading="lazy"
+          src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb2-e1549990637829.jpg"
+          alt="image"
+        />
+
+        <h3> For Children</h3>
+      </Link>
     </div>
   );
 }
