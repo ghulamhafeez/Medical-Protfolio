@@ -3,18 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { Navigation } from "swiper";
-import { Grid } from "@mui/material";
+import { Grid, Button } from "@mui/material";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import { CardActionArea } from "@mui/material";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { homeData } from "../constants/Constant";
+import { homeData, PatientStoriesData } from "../constants/Constant";
 
 export default function Home() {
   console.log("h", homeData);
@@ -30,8 +26,6 @@ export default function Home() {
           {homeData?.map((x) => {
             return (
               <SwiperSlide key={x}>
-                {/* <Card sx={{ width: 200 }}>
-                <CardActionArea> */}
                 <img src={x?.url} alt="Girl in a jacket" width="100%" />
                 {/* <Typography
                       sx={{
@@ -42,8 +36,6 @@ export default function Home() {
                     >
                       {x?.text}
                     </Typography> */}
-                {/* </CardActionArea>
-              </Card> */}
               </SwiperSlide>
             );
           })}
@@ -83,6 +75,65 @@ export default function Home() {
           </Link>
         </Grid>
       </Grid>
+
+      <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
+        {PatientStoriesData.map((x) => {
+          return (
+            <SwiperSlide key={x}>
+              <Grid
+                container
+                display={"flex"}
+                direction={"row"}
+                px={{ xs: 2, sm: 5, md: 10, lg: 20 }}
+                spacing={4}
+                pt={5}
+                pb={5}
+              >
+                <Grid item xs={12} sm={6}>
+                  <img loading="lazy" src={x.src} alt="" width={"100%"}></img>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+
+                  // px={12}
+                >
+                  <Typography
+                    variant="h6"
+                    color={"#333333"}
+                    pb={4}
+                    mt={18}
+                    textAlign={"center"}
+                    ml={12}
+                    // fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
+                  >
+                    {x.story}
+                  </Typography>
+
+                  <Link href={"/patient-stories"}>
+                    <Button
+                      sx={{
+                        backgroundColor: "#AFB5B9",
+                        borderRadius: 0,
+                        color: "white",
+                        pt: 2,
+                        ml: 30,
+                      }}
+                      variant="contained"
+                      className={styles.enqiry_btn}
+                    >
+                      <Typography gutterBottom fontSize={15}>
+                        Read More
+                      </Typography>
+                    </Button>
+                  </Link>
+                </Grid>
+              </Grid>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </Grid>
   );
 }

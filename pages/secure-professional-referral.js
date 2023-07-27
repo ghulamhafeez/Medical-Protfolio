@@ -158,13 +158,13 @@ export default function SecureProfessionalReferral() {
           sx={{
             backgroundColor: "#AFB5B9",
             color: "white",
-            width: "100%",
+            width: "30px",
             mb: 4,
           }}
-          variant="contained"
+          // variant="contained"
           className={styles.enqiry_btn}
         >
-          Submite
+          Submit
         </Button>
       </Grid>
     </Grid>

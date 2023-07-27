@@ -1,6 +1,8 @@
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { PatientStoriesData } from "../constants/Constant";
+
 export default function PatientStories() {
   return (
     <Grid>
@@ -20,29 +22,26 @@ export default function PatientStories() {
         </Typography>
       </Grid>
 
-      <img
-        loading="lazy"
-        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/Kid-1.jpg"
-        alt=""
-      ></img>
-
-      <img
-        loading="lazy"
-        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/Lady-1.jpg"
-        alt=""
-      />
-
-      <img
-        loading="lazy"
-        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/sm-2000019.jpg"
-        alt=""
-      />
-
-      <img
-        loading="lazy"
-        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/iudnrvtw.jpeg"
-        alt=""
-      />
+      {PatientStoriesData.map((x) => {
+        return (
+          <Grid
+            container
+            key={x}
+            display={"flex"}
+            direction={"row"}
+            px={{ xs: 2, sm: 5, md: 10, lg: 20 }}
+          >
+            <Grid item xs={12} sm={6} pb={4}>
+              <img loading="lazy" src={x.src} alt="" width={"100%"}></img>
+            </Grid>
+            <Grid item xs={12} sm={6} px={6}>
+              <Typography variant="h6" color={"#333333"} mt={18}>
+                {x.story}
+              </Typography>
+            </Grid>
+          </Grid>
+        );
+      })}
     </Grid>
   );
 }

@@ -22,24 +22,22 @@ export default function Transformation() {
       <Grid
         display={"flex"}
         direction={"row"}
-        gap={5}
-        px={{ xs: 3, sm: 2, md: 2, lg: 20 }}
+        spacing={2}
+        px={{ xs: 3, sm: 2, md: 4, lg: 20 }}
         pb={5}
         container
       >
-        <Grid display={"flex"} direction={"column"}>
+        <Grid item xs={12} sm={6} display={"flex"} direction={"column"}>
           <Typography variant="h4">Before</Typography>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            display={"flex"}
-            direction={"row"}
-            gap={2}
-          >
-            <Grid display={"flex"} direction={"column"} gap={2}>
+          <Grid item display={"flex"} direction={"row"} gap={2}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              display={"flex"}
+              direction={"column"}
+              gap={2}
+            >
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Frontal-1-1.jpg"
@@ -51,7 +49,14 @@ export default function Transformation() {
                 width={"100%"}
               ></img>
             </Grid>
-            <Grid display={"flex"} direction={"column"} gap={2}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              display={"flex"}
+              direction={"column"}
+              gap={2}
+            >
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Right-side-.jpg"
@@ -70,19 +75,17 @@ export default function Transformation() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid display={"flex"} direction={"column"}>
+        <Grid item xs={12} sm={6} display={"flex"} direction={"column"}>
           <Typography variant="h4">After</Typography>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            display={"flex"}
-            direction={"row"}
-            gap={2}
-          >
-            <Grid display={"flex"} direction={"column"} gap={2}>
+          <Grid item display={"flex"} direction={"row"} gap={2}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              display={"flex"}
+              direction={"column"}
+              gap={2}
+            >
               {" "}
               <img
                 loading="lazy"
@@ -95,7 +98,14 @@ export default function Transformation() {
                 width={"100%"}
               />
             </Grid>
-            <Grid display={"flex"} direction={"column"} gap={2}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              display={"flex"}
+              direction={"column"}
+              gap={2}
+            >
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/side-right.jpg"
@@ -114,6 +124,41 @@ export default function Transformation() {
             </Grid>
           </Grid>
         </Grid>
+      </Grid>
+
+      <Grid
+        display={"flex"}
+        justifyContent={"center"}
+        px={{ xs: 2, sm: 4, md: 12, lg: 36 }}
+        pb={6}
+        pt={2}
+      >
+        <Typography variant="body1">
+          Patient presented with a small upper jaw and a protrusive lower jaw.
+          She had asymmetry in the upper and lower jaws with the right side of
+          her face being longer than the left side of the face. This was
+          displacing the mid-point of the chin to the left hand-side as well as
+          causing all the left teeth to be higher on the left side than the
+          right side. The upper left canine had become impacted to the palate
+          and this was surgically removed a few years before the initial
+          presentation of the patient to our clinic. As a consequence, all the
+          the roots of the upper front teeth resulting in the roots of the upper
+          front teeth being short and weak.The orthodontic treatment duration
+          was less than 18 months and it entailed upper and lower fixed
+          appliances. The upper centerline was corrected through gaining space
+          from the loss of the upper right second premolar. The upper and lower
+          teeth were prepared for double-jaw(orthognathic) surgery with a view
+          to correcting the facial asymmetry, giving our patient the ideal
+          dimension if upper and lower jaws, and improving her bite. The upper
+          left front teeth were built up to the ideal dimensions with composite
+          completed and after a brief course of tooth-whitening. The upper left
+          premolar was build-up with composite resin to resemble the appearance
+          of the upper left canine. All the orthodontic treatment was done
+          carefully with bearing in mind that the roots of upper front teeth did
+          not weaken any further.Acknowledgements:&nbsp;The orthognathic surgery
+          was done by&nbsp;Mr Manolis Heliotis, Consultant Oral and
+          Maxillofacial Surgeon,&nbsp;152 Harley street, London, W1G 7LH.
+        </Typography>
       </Grid>
     </Grid>
   );
