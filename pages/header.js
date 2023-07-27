@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
-
 import { TabsData } from "../constants/Constant";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -64,12 +63,7 @@ export default function Header() {
             {TabsData?.map((x) => {
               return (
                 <Link href={x.path} key={x}>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    // ml={3}
-                    textAlign={"center"}
-                  >
+                  <Typography variant="h6" gutterBottom textAlign={"center"}>
                     {x.name}
                     <hr></hr>
                   </Typography>

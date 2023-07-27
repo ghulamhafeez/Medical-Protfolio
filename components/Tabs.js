@@ -7,7 +7,6 @@ export default function Tabs() {
   return (
     <Grid
       display={"flex"}
-      //   pl={36}
       flexWrap={"wrap"}
       pt={2}
       pb={1}

@@ -1,6 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import { Button, Grid } from "@mui/material";
-import Link from "next/link";
+import { Grid } from "@mui/material";
 import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Typography from "@mui/material/Typography";

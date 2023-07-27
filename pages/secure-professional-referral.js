@@ -161,7 +161,6 @@ export default function SecureProfessionalReferral() {
             width: "30px",
             mb: 4,
           }}
-          // variant="contained"
           className={styles.enqiry_btn}
         >
           Submit

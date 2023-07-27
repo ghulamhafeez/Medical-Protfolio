@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { Navigation } from "swiper";
@@ -42,13 +41,7 @@ export default function Home() {
         </Swiper>
       </Grid>
 
-      <Grid
-        container
-        // display={"flex"}
-        direction={"row"}
-        spacing={3}
-        pt={3}
-      >
+      <Grid container direction={"row"} spacing={3} pt={3}>
         <Grid item xs={12} sm={6}>
           <Link href="https://www.ektorgrammatopoulos.com/orthodontics-treatment-for-adult/">
             <img
@@ -92,13 +85,7 @@ export default function Home() {
                 <Grid item xs={12} sm={6}>
                   <img loading="lazy" src={x.src} alt="" width={"100%"}></img>
                 </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-
-                  // px={12}
-                >
+                <Grid item xs={12} sm={6}>
                   <Typography
                     variant="h6"
                     color={"#333333"}
@@ -106,7 +93,6 @@ export default function Home() {
                     mt={18}
                     textAlign={"center"}
                     ml={12}
-                    // fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
                   >
                     {x.story}
                   </Typography>
