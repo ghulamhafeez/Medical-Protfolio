@@ -19,6 +19,30 @@ export default function PatientStories() {
           Patient Stories
         </Typography>
       </Grid>
+
+      <img
+        loading="lazy"
+        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/Kid-1.jpg"
+        alt=""
+      ></img>
+
+      <img
+        loading="lazy"
+        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/Lady-1.jpg"
+        alt=""
+      />
+
+      <img
+        loading="lazy"
+        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/sm-2000019.jpg"
+        alt=""
+      />
+
+      <img
+        loading="lazy"
+        src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/iudnrvtw.jpeg"
+        alt=""
+      />
     </Grid>
   );
 }

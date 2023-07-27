@@ -1,19 +1,20 @@
-export const HomeData = [
+export const homeData = [
   {
-    url: "img_girl.jpg",
-    text: "As a dental hygienist I am very particular about who I trust for my dental care. There is no one better than Dr. Frost! He is cutting edge and takes the time to do it right with attention to detail.",
+    url: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/slider-thumb1.jpg",
+    text: "Patient-centred care in a relaxing environment  Efficient orthodontic treatment  Optimum and guaranteed orthodontic outcomes and results ",
   },
   {
-    url: "img_girl.jpg",
-    text: "Damon braces are the best! Widen your smile while you straighten it! And Dr. Frost and the staff are all seriously THE best!!",
+    url: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/incognito.jpg",
+    text: "Damon braces are the best! Widen your smile while you straighten it! ",
+  },
+
+  {
+    url: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/Discreet-systems-for-children-and-adults.jpg",
+    text: "Seriously one of the best orthodontists on the planet!",
   },
   {
-    url: "img_girl.jpg",
-    text: "Seriously one of the best orthodontists on the planet! Staff is on point and the most knowledgeable support staff I've seen. They are so passionate about making smiles the best and making your experience awesome!",
-  },
-  {
-    url: "img_girl.jpg",
-    text: "Frost Orthodontics has the best and nicest staff. They're super gentle and I'm super excited because now my teeth are super straight and coming off in two weeks!!!",
+    url: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/incognito.jpg",
+    text: "Frost Orthodontics has the best and nicest staff.",
   },
 ];
 
@@ -40,6 +41,29 @@ export const CasesGalleryData = [
   },
   { name: "Restorative", path: "/cases-gallery/restorative" },
   { name: "Spaced Teeth", path: "/cases-gallery/spaced-teeth" },
+];
+
+export const PatientStories = [
+  {
+    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    story:
+      "As the parent of a son who underwent treatment, I am delighted to recommend the practice and Ektor Grammatopoulos",
+  },
+  {
+    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    story:
+      "Dr Ektor Grammatopoulos carried out my husband’s orthodontic treatment nearly ten years ago and I recently completed my orthodontic treatment with him",
+  },
+  {
+    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    story:
+      "Dr Ektor Grammatopoulos treated R. for her severe overbite and misaligned teeth. As a mother, I was very impressed with his overall outstanding work in giving R a perfect smile",
+  },
+  {
+    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
+    story:
+      "Dr Ektor Grammatopoulos carried out my husband’s orthodontic treatment I have been so pleased with my orthodontic treatment from start to finish and the results are exactly what I was hoping for and more.",
+  },
 ];
 
 export const Crowding = [

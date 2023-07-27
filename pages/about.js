@@ -33,7 +33,6 @@ export default function About() {
         container
         flexWrap={"wrap"}
         direction={"row"}
-        item
         px={{ xs: 3, sm: 6, md: 15, lg: 30 }}
         spacing={3}
       >
