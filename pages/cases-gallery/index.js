@@ -32,7 +32,8 @@ export default function CasesGallery() {
               display={"flex"}
               direction={"column"}
               mb={4}
-              px={{ xs: 2, sm: 6, md: 12, lg: 28, xl: 38 }}
+              mt={5}
+              px={{ xs: 2, sm: 6, md: 8, lg: 36, xl: 48 }}
             >
               <Typography variant="h6">{x.title}</Typography>
               <Grid container key={x} spacing={4}>

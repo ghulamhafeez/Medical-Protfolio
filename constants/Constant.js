@@ -64,7 +64,7 @@ export const PatientStoriesData = [
 
 export const Crowding = [
   {
-    title: "Befor",
+    title: "Before",
     src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-3.jpg",
     src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/upper-website.jpg",
     src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-1-.jpg",
@@ -77,7 +77,7 @@ export const Crowding = [
   },
 
   {
-    title: "Befor",
+    title: "Before",
     src1: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/website-crop.jpg",
     src2: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-Right-1.jpg",
     src3: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2021/01/Website-1-.jpg",

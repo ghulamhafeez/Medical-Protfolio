@@ -127,7 +127,18 @@ export default function Contact() {
           </Grid>
         </Grid>
         <Grid>
-          <h1>Google Map</h1>
+          <Grid mb={6} mt={6}>
+            <iframe
+              width="100%"
+              height="500"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=nishtar Clinic&t=&z=10&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

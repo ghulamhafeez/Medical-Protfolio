@@ -16,7 +16,6 @@ export default function Header() {
       direction={"column"}
       flexWrap={"wrap"}
       bgcolor={"#FAFAFA"}
-      pt={3}
     >
       <Grid display={"flex"}>
         <img
@@ -32,6 +31,7 @@ export default function Header() {
               sx={{
                 height: "47px",
                 width: "47px",
+                ml: 2,
               }}
               className={styles.menu}
               onClick={() => setOpen(true)}
@@ -57,15 +57,30 @@ export default function Header() {
       <Grid container>
         <Drawer open={open} anchor={"top"} onClose={() => setOpen(false)}>
           <Box
-            sx={{ width: "100%", backgroundColor: "#FAFAFA" }}
+            sx={{ width: "100%", backgroundColor: "#AFB5B9" }}
             onClick={() => setOpen(false)}
           >
+            <MenuIcon
+              color="white"
+              sx={{
+                height: "45px",
+                width: "45px",
+                ml: 2,
+              }}
+              className={styles.menu}
+              onClick={() => setOpen(true)}
+            />
             {TabsData?.map((x) => {
               return (
                 <Link href={x.path} key={x}>
-                  <Typography variant="h6" gutterBottom textAlign={"center"}>
-                    {x.name}
+                  <Typography
+                    variant="h6"
+                    color={"white"}
+                    gutterBottom
+                    textAlign={"center"}
+                  >
                     <hr></hr>
+                    {x.name}
                   </Typography>
                 </Link>
               );

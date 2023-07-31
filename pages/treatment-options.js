@@ -15,7 +15,12 @@ export default function TreatmentOptions() {
         <Typography
           variant="h3"
           color={"#333333"}
-          fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
+          fontSize={{
+            xs: "30px",
+            sm: "30px",
+            md: "40px",
+            lg: "40px",
+          }}
         >
           Treatment Options
         </Typography>
@@ -35,7 +40,7 @@ export default function TreatmentOptions() {
         direction={"row"}
         textAlign={"center"}
         mb={6}
-        px={{ xs: 2, sm: 5, md: 15, lg: 30 }}
+        px={{ xs: 2, sm: 4, md: 12, lg: 32, xl: 42 }}
         spacing={4}
       >
         <Grid item xs={12} sm={6} md={6} lg={6}>

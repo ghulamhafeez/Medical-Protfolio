@@ -22,8 +22,8 @@ export default function Transformation() {
       <Grid
         display={"flex"}
         direction={"row"}
-        spacing={2}
-        px={{ xs: 3, sm: 2, md: 4, lg: 20 }}
+        spacing={4}
+        px={{ xs: 3, sm: 3, md: 5, lg: 22, xl: 32 }}
         pb={5}
         container
       >
@@ -110,16 +110,19 @@ export default function Transformation() {
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/side-right.jpg"
                 width={"100%"}
+                height={"32%"}
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/fontal-newest.jpg"
                 width={"100%"}
+                height={"32%"}
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Side-left-.jpg"
                 width={"100%"}
+                height={"32%"}
               ></img>
             </Grid>
           </Grid>
@@ -160,6 +163,9 @@ export default function Transformation() {
           Maxillofacial Surgeon,&nbsp;152 Harley street, London, W1G 7LH.
         </Typography>
       </Grid>
+      <Typography variant="h4" textAlign={"center"} color={"grey"} pb={4}>
+        Transformations
+      </Typography>
     </Grid>
   );
 }
