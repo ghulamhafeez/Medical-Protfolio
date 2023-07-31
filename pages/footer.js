@@ -5,8 +5,15 @@ import Typography from "@mui/material/Typography";
 export default function Footer() {
   return (
     <Grid textAlign={"center"} bgcolor={"#333333"}>
-      <Grid display={"flex"} direction={"row"} justifyContent={"space-around"}>
-        <Grid pt={3}>
+      <Grid
+        container
+        pt={3}
+        // direction={"row"}
+
+        flexWrap={"wrap"}
+        // justifyContent={"space-around"}
+      >
+        <Grid item xs={12} sm={4}>
           <img
             loading="lazy"
             src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo3.jpg"
@@ -15,7 +22,7 @@ export default function Footer() {
             width={"60%"}
           />
         </Grid>
-        <Grid pt={3}>
+        <Grid item xs={12} sm={4}>
           <Typography variant="h4" gutterBottom color={"white"} pb={4}>
             VISIT US
           </Typography>
@@ -26,7 +33,7 @@ export default function Footer() {
             Lister House, 11-12 <br></br>Wimpole Street,
           </Typography>
         </Grid>
-        <Grid pt={3} pb={2}>
+        <Grid item pb={2} xs={12} sm={4}>
           <Typography variant="h4" gutterBottom color={"white"} pb={4}>
             FOLLOW US
           </Typography>

@@ -7,7 +7,7 @@ export default function MainLayout({ children }) {
   return (
     <Grid>
       <Header></Header>
-      <Grid position={"sticky"} top={0} zIndex={1}>
+      <Grid position={"sticky"} top={0} zIndex={10}>
         <Tabs></Tabs>
       </Grid>
       {children}
