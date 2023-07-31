@@ -22,12 +22,30 @@ export default function Blog() {
         </Typography>
       </Grid>
       <Grid
-        bgcolor={"#89C1CB"}
+        container
         display={"flex"}
         direction={"row"}
-        justifyContent={"space-around"}
-        pt={1}
-      ></Grid>
+        px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
+      >
+        <Grid item xs={12} sm={6} pb={4}>
+          <img
+            loading="lazy"
+            src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/je.ol.jpg"
+            alt=""
+            width={"100%"}
+          ></img>
+        </Grid>
+        <Grid item xs={12} sm={6} px={4}>
+          <Typography variant="h4" color={"#333333"} mt={8}>
+            Upcomming lectures - details to follow soon
+          </Typography>
+          <Typography variant="h6" color={"#333333"} mt={10}>
+            London Excellere 19-20 May Chicago&nbsp; 23-24 July 2019 British
+            Orthodontic Society Conference&nbsp; September 2019 Amman 12-13
+            September New York 14-15…
+          </Typography>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }

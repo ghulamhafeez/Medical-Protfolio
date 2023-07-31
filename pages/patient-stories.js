@@ -29,12 +29,12 @@ export default function PatientStories() {
             key={x}
             display={"flex"}
             direction={"row"}
-            px={{ xs: 2, sm: 5, md: 10, lg: 20 }}
+            px={{ xs: 2, sm: 5, md: 10, lg: 22 }}
           >
             <Grid item xs={12} sm={6} pb={4}>
-              <img loading="lazy" src={x.src} alt="" width={"100%"}></img>
+              <img loading="lazy" src={x.src} alt="" width={"95%"}></img>
             </Grid>
-            <Grid item xs={12} sm={6} px={6}>
+            <Grid item xs={12} sm={6} px={3}>
               <Typography variant="h6" color={"#333333"} mt={18}>
                 {x.story}
               </Typography>
