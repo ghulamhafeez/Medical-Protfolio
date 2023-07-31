@@ -1,6 +1,6 @@
 import "../styles/Home.module.css";
 import { Grid } from "@mui/material";
-import Footer from "../pages/Footer";
+import Footer from "../pages/footer";
 import Header from "../pages/header";
 import Tabs from "./Tabs";
 export default function MainLayout({ children }) {

@@ -2,7 +2,7 @@ import "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <Grid textAlign={"center"} bgcolor={"#333333"}>
       <Grid
@@ -58,4 +58,4 @@ export default function Footer() {
       </Typography>
     </Grid>
   );
-}
+};
