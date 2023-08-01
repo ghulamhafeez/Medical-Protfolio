@@ -32,7 +32,7 @@ export default function PatientStories() {
             px={{ xs: 2, sm: 5, md: 10, lg: 22 }}
           >
             <Grid item xs={12} sm={6} pb={4}>
-              <img loading="lazy" src={x.src} alt="" width={"95%"}></img>
+              <img loading="lazy" src={x.src} alt="iamge" width={"95%"}></img>
             </Grid>
             <Grid item xs={12} sm={6} px={3}>
               <Typography variant="h6" color={"#333333"} mt={18}>

@@ -31,7 +31,7 @@ export default function Blog() {
           <img
             loading="lazy"
             src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/je.ol.jpg"
-            alt=""
+            alt="iamge"
             width={"100%"}
           ></img>
         </Grid>

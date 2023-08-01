@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -43,6 +44,7 @@ export default function About() {
             width={"100%"}
             max-width="340px"
             height={"360px"}
+            alt={"Thumbnail"}
           ></img>
         </Grid>
         <Grid item xs={12} sm={8} md={8} lg={8} mb={6}>

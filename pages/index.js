@@ -25,7 +25,7 @@ export default function Home() {
           {homeData?.map((x) => {
             return (
               <SwiperSlide key={x}>
-                <img src={x?.url} alt="Girl in a jacket" width="100%" />
+                <img src={x?.url} alt="iamge" width="100%" />
                 {/* <Typography
                       sx={{
                         fontSize: 13,
@@ -83,7 +83,12 @@ export default function Home() {
                 pb={5}
               >
                 <Grid item xs={12} sm={6}>
-                  <img loading="lazy" src={x.src} alt="" width={"100%"}></img>
+                  <img
+                    loading="lazy"
+                    src={x.src}
+                    alt="iamge"
+                    width={"100%"}
+                  ></img>
                 </Grid>
                 <Grid
                   item

@@ -42,11 +42,13 @@ export default function Transformation() {
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Frontal-1-1.jpg"
                 width={"100%"}
+                alt="iamge"
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/IMG_6365.jpg"
                 width={"100%"}
+                alt="iamge"
               ></img>
             </Grid>
             <Grid
@@ -61,16 +63,19 @@ export default function Transformation() {
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Right-side-.jpg"
                 width={"100%"}
+                alt="iamge"
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/IMG_6369.jpg"
                 width={"100%"}
+                alt="iamge"
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/IMG_6371.jpg"
                 width={"100%"}
+                alt="iamge"
               ></img>
             </Grid>
           </Grid>
@@ -91,11 +96,13 @@ export default function Transformation() {
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/00148-copy.jpg"
                 width={"100%"}
+                alt="iamge"
               />
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/00141.jpg"
                 width={"100%"}
+                alt="iamge"
               />
             </Grid>
             <Grid
@@ -111,18 +118,21 @@ export default function Transformation() {
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/side-right.jpg"
                 width={"100%"}
                 height={"32%"}
+                alt="iamge"
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/fontal-newest.jpg"
                 width={"100%"}
                 height={"32%"}
+                alt="iamge"
               ></img>
               <img
                 loading="lazy"
                 src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/10/Side-left-.jpg"
                 width={"100%"}
                 height={"32%"}
+                alt="iamge"
               ></img>
             </Grid>
           </Grid>

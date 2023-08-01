@@ -36,13 +36,13 @@ export default function DeepBite() {
               <Typography variant="h6">{x.title}</Typography>
               <Grid container key={x} spacing={4}>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" src={x.src1} width={"100%"} />
+                  <img loading="lazy" alt="iamge" src={x.src1} width={"100%"} />
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" src={x.src2} width={"100%"} />
+                  <img loading="lazy" alt="iamge" src={x.src2} width={"100%"} />
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" src={x.src3} width={"100%"} />
+                  <img loading="lazy" alt="iamge" src={x.src3} width={"100%"} />
                 </Grid>
               </Grid>
             </Grid>
