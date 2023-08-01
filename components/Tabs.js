@@ -11,7 +11,7 @@ export default function Tabs() {
       pt={2}
       pb={1}
       //   sx={{ display: { sm: "none", xs: "none", md: "block", lg: "block" } }}
-      px={{ sm: 2, md: 5, lg: 22 }}
+      px={{ sm: 2, md: 5, lg: 22, xl: 26 }}
       className={styles.tabs}
       bgcolor={"white"}
     >
