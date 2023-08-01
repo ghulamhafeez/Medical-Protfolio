@@ -23,6 +23,7 @@ export const TabsData = [
   { name: "Patient Stories", path: "/patient-stories" },
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
+  { name: "Secured Referral", path: "/secured-referral" },
 ];
 export const CasesGalleryData = [
   { name: "Crowding", path: "/" },

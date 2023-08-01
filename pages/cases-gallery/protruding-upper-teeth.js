@@ -16,7 +16,7 @@ export default function ProtrudingUpperTeeth() {
       >
         <Typography
           variant="h3"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
           protruding Upper Teeth

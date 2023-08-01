@@ -16,7 +16,7 @@ export default function Contact() {
       >
         <Typography
           variant="h3"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "40px", sm: "40px", md: "40px", lg: "40px" }}
         >
           Contact
@@ -25,7 +25,7 @@ export default function Contact() {
       <Grid>
         <Grid textAlign={"center"}>
           <Grid px={{ xs: 5, sm: 28, md: 45, lg: 65 }}>
-            <Link href="/secure-professional-referral">
+            <Link href="/secure-referral">
               <Button
                 sx={{
                   backgroundColor: "#AFB5B9",

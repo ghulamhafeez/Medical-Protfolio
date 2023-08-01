@@ -8,21 +8,21 @@ export default function About() {
       <Grid bgcolor={"#89C1CB"} height={250} mb={6} textAlign={"center"} pt={8}>
         <Typography
           variant="h3"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
           Dr Ektor Grammatopoulos
         </Typography>
         <Typography
           variant="h6"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "18px", sm: "18px", md: "22px", lg: "25px" }}
         >
           Specialist and Consultant Orthodontist
         </Typography>
         <Typography
           variant="body2"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "15px", sm: "15px", md: "15px", lg: "15px" }}
         >
           BDS MFDS RCPSG MPHIL(Orth) MORTH RCSED FDS(ORTH) RCSED PGCert(KCL)

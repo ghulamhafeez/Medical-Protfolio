@@ -14,7 +14,7 @@ export default function Transformation() {
       >
         <Typography
           variant="h3"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "35px", sm: "35px", md: "40px", lg: "40px" }}
         >
           Transformation

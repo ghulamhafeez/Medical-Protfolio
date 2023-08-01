@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-export default function SecureProfessionalReferral() {
+export default function SecuredReferral() {
   return (
     <Grid>
       <Grid
@@ -15,10 +15,10 @@ export default function SecureProfessionalReferral() {
       >
         <Typography
           variant="h3"
-          color={"#333333"}
+          color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Secure Professional Referral
+          Secured Referral
         </Typography>
       </Grid>
 
@@ -39,7 +39,7 @@ export default function SecureProfessionalReferral() {
         <Typography
           variant="h4"
           color={"#333333"}
-          fontSize={{ xs: "25px", sm: "25px", md: "25px", lg: "25px" }}
+          fontSize={{ xs: "22px", sm: "22px", md: "22px", lg: "25px" }}
           textAlign={"left"}
         >
           Patient Details
