@@ -2,7 +2,7 @@ import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { PatientStoriesData } from "../constants/Constant";
-
+/* eslint-disable @next/next/no-img-element */
 export default function PatientStories() {
   return (
     <Grid>

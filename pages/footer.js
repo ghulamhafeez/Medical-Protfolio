@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -5,14 +6,7 @@ import Typography from "@mui/material/Typography";
 export const Footer = () => {
   return (
     <Grid textAlign={"center"} bgcolor={"#333333"}>
-      <Grid
-        container
-        pt={3}
-        // direction={"row"}
-
-        flexWrap={"wrap"}
-        // justifyContent={"space-around"}
-      >
+      <Grid container pt={3} flexWrap={"wrap"}>
         <Grid item xs={12} sm={4}>
           <img
             loading="lazy"

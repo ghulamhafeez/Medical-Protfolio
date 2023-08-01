@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
+/* eslint-disable @next/next/no-img-element */
 export default function Restorative() {
   return (
     <Grid>

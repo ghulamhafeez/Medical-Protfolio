@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Typography from "@mui/material/Typography";
 import { Crowding } from "../../constants/Constant";
+/* eslint-disable @next/next/no-img-element */
 export default function ProtrudingUpperTeeth() {
   return (
     <Grid>

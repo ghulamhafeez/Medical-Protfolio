@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 export default function TreatmentOptions() {
   return (
