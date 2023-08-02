@@ -1,8 +1,8 @@
 import { FacebookProvider, CustomChat } from "react-facebook";
 
-const ChatMessage = () => {
+export default function ChatMessage() {
   return (
-    <FacebookProvider appId="123456789" chatSupport>
+    <FacebookProvider appId="1035059091188504" chatSupport>
       <CustomChat pageId="105822544169742" minimized={false} />
     </FacebookProvider>
     // <!-- Messenger Chat Plugin Code -->
@@ -36,6 +36,4 @@ const ChatMessage = () => {
     //   }(document, 'script', 'facebook-jssdk'));
     // </script>
   );
-};
-
-export default ChatMessage;
+}
