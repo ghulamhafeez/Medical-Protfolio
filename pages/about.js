@@ -2,7 +2,16 @@
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import Backdrop from "@mui/material/Backdrop";
+import { useEffect, useState } from "react";
 export default function About() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid direction={"column"}>
       <Grid bgcolor={"#89C1CB"} height={250} mb={6} textAlign={"center"} pt={8}>
@@ -29,7 +38,22 @@ export default function About() {
           FHEA
         </Typography>
       </Grid>
-
+      <Backdrop
+        sx={{
+          color: "#89C1CB",
+          backgroundColor: "#89C1CB",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <Typography
+          variant="h1"
+          color={"white"}
+          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
+        >
+          Dr Haris
+        </Typography>
+      </Backdrop>
       <Grid
         container
         flexWrap={"wrap"}

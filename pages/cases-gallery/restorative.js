@@ -3,8 +3,17 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
+import { useEffect, useState } from "react";
+import Backdrop from "@mui/material/Backdrop";
 /* eslint-disable @next/next/no-img-element */
 export default function Restorative() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid>
       <Grid
@@ -22,6 +31,22 @@ export default function Restorative() {
           Restorative
         </Typography>
       </Grid>
+      <Backdrop
+        sx={{
+          color: "#89C1CB",
+          backgroundColor: "#89C1CB",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <Typography
+          variant="h1"
+          color={"white"}
+          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
+        >
+          Dr Haris
+        </Typography>
+      </Backdrop>
       <CasesGalleryTabs></CasesGalleryTabs>
 
       <Grid>

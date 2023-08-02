@@ -2,8 +2,17 @@ import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import Backdrop from "@mui/material/Backdrop";
+import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 export default function SecuredReferral() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid>
       <Grid
@@ -21,7 +30,22 @@ export default function SecuredReferral() {
           Secured Referral
         </Typography>
       </Grid>
-
+      <Backdrop
+        sx={{
+          color: "#89C1CB",
+          backgroundColor: "#89C1CB",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <Typography
+          variant="h1"
+          color={"white"}
+          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
+        >
+          Dr Haris
+        </Typography>
+      </Backdrop>
       <Grid
         display={"flex"}
         direction={"column"}

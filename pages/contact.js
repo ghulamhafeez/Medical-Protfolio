@@ -2,9 +2,18 @@ import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import Backdrop from "@mui/material/Backdrop";
 import Link from "next/link";
 import Button from "@mui/material/Button";
+import { useEffect, useState } from "react";
 export default function Contact() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid display={"flex"} direction={"column"} container>
       <Grid
@@ -22,6 +31,22 @@ export default function Contact() {
           Contact
         </Typography>
       </Grid>
+      <Backdrop
+        sx={{
+          color: "#89C1CB",
+          backgroundColor: "#89C1CB",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <Typography
+          variant="h1"
+          color={"white"}
+          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
+        >
+          Dr Haris
+        </Typography>
+      </Backdrop>
       <Grid>
         <Grid textAlign={"center"}>
           <Grid px={{ xs: 5, sm: 28, md: 45, lg: 65 }}>

@@ -11,9 +11,15 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from "@mui/material/Typography";
 import { homeData, PatientStoriesData } from "../constants/Constant";
-
+import { useEffect, useState } from "react";
 export default function Home() {
-  console.log("h", homeData);
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid>
       <Head>

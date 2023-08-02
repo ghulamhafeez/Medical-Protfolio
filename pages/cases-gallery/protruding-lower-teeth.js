@@ -2,9 +2,18 @@ import styles from "../../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
+import Backdrop from "@mui/material/Backdrop";
+import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 /* eslint-disable @next/next/no-img-element */
 export default function ProtrudingLowerTeeth() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  }, []);
   return (
     <Grid>
       <Grid
@@ -23,7 +32,22 @@ export default function ProtrudingLowerTeeth() {
         </Typography>
       </Grid>
       <CasesGalleryTabs></CasesGalleryTabs>
-
+      <Backdrop
+        sx={{
+          color: "#89C1CB",
+          backgroundColor: "#89C1CB",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <Typography
+          variant="h1"
+          color={"white"}
+          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
+        >
+          Dr Haris
+        </Typography>
+      </Backdrop>
       <Grid>
         {Crowding.map((x) => {
           return (
