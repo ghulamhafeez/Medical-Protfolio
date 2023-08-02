@@ -1,3 +1,4 @@
+"use clinte";
 import { FacebookProvider, CustomChat } from "react-facebook";
 
 export default function ChatMessage() {

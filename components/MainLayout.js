@@ -12,7 +12,7 @@ export default function MainLayout({ children }) {
         <Tabs></Tabs>
       </Grid>
       {children}
-      <ChatMessage></ChatMessage>
+      <ChatMessage />
       <Footer></Footer>
     </Grid>
   );
