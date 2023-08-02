@@ -4,6 +4,7 @@ import { Footer } from "./footer";
 import Header from "./header";
 import Tabs from "./Tabs";
 import ChatMessage from "./ChatMessage";
+
 export default function MainLayout({ children }) {
   return (
     <Grid>
