@@ -29,7 +29,7 @@ export const Footer = () => {
             Lister House, 11-12 <br></br>Wimpole Street,
           </Typography>
         </Grid>
-        <Grid item pb={2} xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
           <Typography variant="h4" gutterBottom color={"white"} pb={4}>
             FOLLOW US
           </Typography>

@@ -12,6 +12,10 @@ import ChatIcon from "@mui/icons-material/Chat";
 
 export default function ChatMessage() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handlePopoverOpen = (event) => {
+    setIsOpen(event.currentTarget);
+  };
   // const handleOpen = () => {
   //   setIsOpen(true);
   // };
@@ -23,62 +27,69 @@ export default function ChatMessage() {
     //   <CustomChat pageId="105822544169742" minimized={true} />
     // </FacebookProvider>
     <Grid>
-      <Popover
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-        // anchorPosition={{ top: 300, right: 600 }}
-        anchorOrigin={{
-          vertical: "center",
-          horizontal: "right",
-        }}
-        // sx={{ ml: 162 }}
-      >
-        <Grid
-          width={"100%"}
-          height={50}
-          display={"flex"}
-          justifyContent={"center"}
-          bgcolor={"#89C1CB"}
+      <Grid>
+        <Popover
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          anchorEl={isOpen}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          sx={{
+            "& .MuiPaper-root": {
+              marginTop: "-80px",
+              marginLeft: "30px",
+            },
+          }}
         >
-          <ChatIcon sx={{ mt: 2, mr: 1, ml: 1, color: "white" }} />
-          <Typography
-            sx={{ mt: 2, mr: 1 }}
-            variant="body1"
-            color={"white"}
-            textAlign={"center"}
+          <Grid
+            width={"100%"}
+            height={50}
+            display={"flex"}
+            justifyContent={"center"}
+            bgcolor={"#89C1CB"}
           >
-            <b>Get a quick response</b>
-          </Typography>
-        </Grid>
-        <Grid
-          height={300}
-          // display={"flex"}
-          // direction={"column"}
-          // justifyContent={"center"}
-        >
-          <Avatar
-            alt="Travis Howard"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 140, height: 140, ml: 8, mt: 2 }}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              borderRadius: 5,
-              mt: 12,
-              ml: 3,
-              mr: 3,
-              backgroundColor: "#89C1CB",
-              ":hover": {
+            <ChatIcon sx={{ mt: 2, mr: 1, ml: 1, color: "white" }} />
+            <Typography
+              sx={{ mt: 2, mr: 1 }}
+              variant="body1"
+              color={"white"}
+              textAlign={"center"}
+            >
+              <b>Get a quick response</b>
+            </Typography>
+          </Grid>
+          <Grid height={300}>
+            <Avatar
+              alt="Travis Howard"
+              src="/static/images/avatar/1.jpg"
+              sx={{ width: 140, height: 140, ml: 8, mt: 2 }}
+            />
+            <Button
+              variant="contained"
+              sx={{
+                borderRadius: 5,
+                mt: 12,
+                ml: 3,
+                mr: 3,
                 backgroundColor: "#89C1CB",
-              },
-            }}
-          >
-            Connect to Facebook
-          </Button>
-        </Grid>
-      </Popover>
-      <Grid mt={1} position={"sticky"} top={0} zIndex={10}>
+                ":hover": {
+                  backgroundColor: "#89C1CB",
+                },
+              }}
+            >
+              Connect to Facebook
+            </Button>
+          </Grid>
+        </Popover>
+      </Grid>
+
+      <Grid mt={1}>
         {isOpen ? (
           <Fab
             sx={{ backgroundColor: "#89C1CB" }}
@@ -94,7 +105,7 @@ export default function ChatMessage() {
                 backgroundColor: "#89C1CB",
               },
             }}
-            onClick={() => setIsOpen(true)}
+            onClick={handlePopoverOpen}
           >
             {/* <AddIcon /> */}
             <ChatIcon sx={{ color: "white" }} />
