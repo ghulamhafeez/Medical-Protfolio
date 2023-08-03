@@ -12,8 +12,19 @@ export default function MainLayout({ children }) {
       <Grid position={"sticky"} top={0} zIndex={10}>
         <Tabs></Tabs>
       </Grid>
+
       {children}
-      <ChatMessage />
+      <Grid
+        position={"sticky"}
+        top={0}
+        zIndex={10}
+        display={"flex"}
+        justifyContent={"end"}
+        mr={5}
+        mb={1}
+      >
+        <ChatMessage></ChatMessage>
+      </Grid>
       <Footer></Footer>
     </Grid>
   );
