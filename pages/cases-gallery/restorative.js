@@ -12,7 +12,7 @@ export default function Restorative() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid>

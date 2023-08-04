@@ -11,7 +11,7 @@ export default function PatientStories() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid>

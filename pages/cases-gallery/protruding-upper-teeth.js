@@ -12,7 +12,7 @@ export default function ProtrudingUpperTeeth() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid>

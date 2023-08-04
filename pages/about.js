@@ -10,7 +10,7 @@ export default function About() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid direction={"column"}>

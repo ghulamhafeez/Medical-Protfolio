@@ -12,7 +12,7 @@ export default function Contact() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid display={"flex"} direction={"column"} container>

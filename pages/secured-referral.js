@@ -11,7 +11,7 @@ export default function SecuredReferral() {
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <Grid>
