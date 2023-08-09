@@ -141,9 +141,11 @@ export default function Home() {
                         color: "white",
                         pt: 2,
                         ml: 8,
+                        ":hover": {
+                          backgroundColor: "#89C1CB",
+                        },
                       }}
                       variant="contained"
-                      className={styles.enqiry_btn}
                     >
                       <Typography gutterBottom fontSize={15}>
                         Read More

@@ -184,8 +184,10 @@ export default function SecuredReferral() {
             color: "white",
             width: "30px",
             mb: 4,
+            ":hover": {
+              backgroundColor: "#89C1CB",
+            },
           }}
-          className={styles.enqiry_btn}
         >
           Submit
         </Button>

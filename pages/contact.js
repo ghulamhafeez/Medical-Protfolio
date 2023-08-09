@@ -57,9 +57,11 @@ export default function Contact() {
                   color: "white",
                   width: "100%",
                   mb: 4,
+                  ":hover": {
+                    backgroundColor: "#89C1CB",
+                  },
                 }}
                 variant="contained"
-                className={styles.enqiry_btn}
               >
                 Secure professional Referral
               </Button>
@@ -143,9 +145,11 @@ export default function Contact() {
                 backgroundColor: "#AFB5B9",
                 color: "white",
                 width: "45%",
+                ":hover": {
+                  backgroundColor: "#89C1CB",
+                },
               }}
               variant="contained"
-              className={styles.enqiry_btn}
             >
               Send Enquiry
             </Button>

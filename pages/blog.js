@@ -63,51 +63,7 @@ export default function Blog() {
           Dr Haris
         </Typography>
       </Backdrop>
-      <Grid pt={4} mb={6} display={"flex"} justifyContent={"center"}>
-        <Popper placement={"top"} id={id} open={OpenPoper} anchorEl={anchorEl}>
-          <Box sx={{ border: 1, p: 1 }}>
-            Link {""} Image {""} Video
-          </Box>
-        </Popper>
-        <Card sx={{ boxShadow: 10 }}>
-          <CardContent>
-            <Grid display={"flex"} direction={"row"} gap={2}>
-              <TextField
-                sx={{ width: 300 }}
-                id="outlined-basic"
-                label="Blog"
-                variant="outlined"
-              />
-              <Fab
-                sx={{
-                  backgroundColor: "#89C1CB",
-                  ":hover": {
-                    backgroundColor: "#89C1CB",
-                  },
-                }}
-                onClick={handleClick}
-              >
-                <AddIcon sx={{ color: "white" }} />
-              </Fab>
-            </Grid>
-            <Grid mt={2} justifyContent={"center"} display={"flex"}>
-              {" "}
-              <Button
-                variant="contained"
-                sx={{
-                  width: 100,
-                  backgroundColor: "#89C1CB",
-                  ":hover": {
-                    backgroundColor: "#89C1CB",
-                  },
-                }}
-              >
-                Add
-              </Button>
-            </Grid>
-          </CardContent>
-        </Card>
-      </Grid>
+
       <Grid
         container
         display={"flex"}

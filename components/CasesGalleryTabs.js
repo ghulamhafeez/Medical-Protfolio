@@ -21,9 +21,11 @@ export default function CasesGalleryTabs() {
                 color: "white",
                 width: "270px",
                 height: "70px",
+                ":hover": {
+                  backgroundColor: "#89C1CB",
+                },
               }}
               variant="contained"
-              className={styles.enqiry_btn}
             >
               <Typography gutterBottom fontSize={15}>
                 {x.name}

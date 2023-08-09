@@ -19,24 +19,32 @@ export default function Header() {
       flexWrap={"wrap"}
       bgcolor={"#FAFAFA"}
     >
-      <Grid display={"flex"} flexWrap={"wrap"}>
+      <Grid
+        display={"flex"}
+        flexWrap={"wrap"}
+        container
+        justifyContent={"space-between"}
+        mb={2}
+      >
         <Grid
           display={{ xs: "none", sm: "block" }}
           mt={2}
-          text-align={{ xs: "left" }}
-          left
+          // text-align={{ xs: "left" }}
+          item
+          xs={12}
+          sm={4}
+          px={{ xs: 8, sm: 10, md: 15, lg: 22, xl: 26 }}
         >
           <img
             loading="lazy"
             src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo2.jpg"
             alt="dr ektor grammatopoulos orthodontics logo2"
-            // className={styles.img}
-            height={110}
-            width={70}
+            width={"100%"}
+            height={100}
           ></img>
         </Grid>
 
-        <Grid display={"flex"} direction={"column"}>
+        <Grid display={"flex"} direction={"column"} item xs={12} sm={4}>
           <Grid bgcolor={"#AFB5B9"} display={{ xs: "block", sm: "none" }}>
             <MenuIcon
               // display={{ xs: "none", sm: "none" }}
@@ -51,30 +59,37 @@ export default function Header() {
             />
           </Grid>
           <Grid
-            isplay={"flex"}
+            display={"flex"}
             justifyContent={"center"}
-            ml={{ xs: 16, sm: 14, md: 40, lg: 70, xl: 78 }}
-            // px={{ xs: 16, sm: 20, md: 20, lg: 28, xl: 20 }}
+            // ml={{ xs: 16, sm: 14, md: 40, lg: 70, xl: 78 }}
+            px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
             // mr={-16}
-            mt={4}
-            mb={1}
+            mt={3}
+            // mb={1}
+            // px={10}
           >
             <img
               loading="lazy"
               src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/dr-ektor.png"
               alt="dr ektor grammatopoulos orthodontics logo1"
-              width={"60%"}
+              width={"100%"}
+
               // className={styles.img}
             ></img>
           </Grid>
         </Grid>
+
         <Grid
+          // px={10}
           display={"flex"}
           direction={"column"}
-          mt={2}
-          ml={{ xs: 12, sm: 1, md: 1, lg: 20, xl: 30 }}
-          // px={{ xs: 16, sm: 20, md: 12, lg: 22, xl: 20 }}
-          justifyContent={"center"}
+          mt={3}
+          xs={12}
+          sm={4}
+          item
+          // ml={{ xs: 12, sm: 1, md: 1, lg: 20, xl: 30 }}
+          px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
+          // justifyContent={"center"}
           textAlign={"center"}
         >
           <Grid>
@@ -83,9 +98,11 @@ export default function Header() {
                 backgroundColor: "#AFB5B9",
                 color: "white",
                 width: "100%",
+                ":hover": {
+                  backgroundColor: "#89C1CB",
+                },
               }}
               variant="contained"
-              className={styles.enqiry_btn}
             >
               Schedule Appointment
             </Button>
@@ -96,10 +113,12 @@ export default function Header() {
                 backgroundColor: "#AFB5B9",
                 color: "white",
                 width: "100%",
+                ":hover": {
+                  backgroundColor: "#89C1CB",
+                },
                 mt: 2,
               }}
               variant="contained"
-              className={styles.enqiry_btn}
             >
               Online consultation
             </Button>
