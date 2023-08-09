@@ -44,7 +44,7 @@ export default function Home() {
           Dr Haris
         </Typography>
       </Backdrop>
-      <Grid>
+      <Grid mt={2}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {homeData?.map((x) => {
             return (

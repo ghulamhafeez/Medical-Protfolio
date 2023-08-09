@@ -20,22 +20,33 @@ export default function Header() {
       bgcolor={"#FAFAFA"}
     >
       <Grid display={"flex"} flexWrap={"wrap"}>
-        <img
-          loading="lazy"
-          src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo2.jpg"
-          alt="dr ektor grammatopoulos orthodontics logo2"
-          className={styles.img}
-        ></img>
+        <Grid
+          display={{ xs: "none", sm: "block" }}
+          mt={2}
+          text-align={{ xs: "left" }}
+          left
+        >
+          <img
+            loading="lazy"
+            src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo2.jpg"
+            alt="dr ektor grammatopoulos orthodontics logo2"
+            // className={styles.img}
+            height={110}
+            width={70}
+          ></img>
+        </Grid>
 
         <Grid display={"flex"} direction={"column"}>
-          <Grid bgcolor={"#AFB5B9"}>
+          <Grid bgcolor={"#AFB5B9"} display={{ xs: "block", sm: "none" }}>
             <MenuIcon
+              // display={{ xs: "none", sm: "none" }}
               sx={{
                 height: "47px",
                 width: "47px",
                 ml: 2,
+                color: "white",
               }}
-              className={styles.menu}
+              // className={styles.menu}
               onClick={() => setOpen(true)}
             />
           </Grid>
@@ -106,9 +117,10 @@ export default function Header() {
               sx={{
                 height: "45px",
                 width: "45px",
+                color: "white",
                 ml: 2,
               }}
-              className={styles.menu}
+              // className={styles.menu}
               onClick={() => setOpen(true)}
             />
             {TabsData?.map((x) => {
