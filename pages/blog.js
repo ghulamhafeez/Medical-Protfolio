@@ -16,6 +16,7 @@ import Backdrop from "@mui/material/Backdrop";
 export default function Blog() {
   const [open, setOpen] = useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [bolgs, setBlogs] = React.useState();
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -25,11 +26,20 @@ export default function Blog() {
   const id = OpenPoper ? "simple-popper" : undefined;
 
   useEffect(() => {
+    getBlog();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
+  const getBlog = () => {
+    supabase
+      .from("blog")
+      .select()
+      .then((response) => {
+        setBlogs(response?.data);
+      });
+  };
   return (
     <Grid>
       <Grid
@@ -64,31 +74,34 @@ export default function Blog() {
         </Typography>
       </Backdrop>
 
-      <Grid
-        container
-        display={"flex"}
-        direction={"row"}
-        px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
-      >
-        <Grid item xs={12} sm={6} pb={4}>
-          <img
-            loading="lazy"
-            src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/je.ol.jpg"
-            alt="iamge"
-            width={"100%"}
-          ></img>
-        </Grid>
-        <Grid item xs={12} sm={6} px={4}>
-          <Typography variant="h4" color={"#333333"} mt={8}>
-            Upcomming lectures - details to follow soon
-          </Typography>
-          <Typography variant="h6" color={"#333333"} mt={10}>
-            London Excellere 19-20 May Chicago&nbsp; 23-24 July 2019 British
-            Orthodontic Society Conference&nbsp; September 2019 Amman 12-13
-            September New York 14-15…
-          </Typography>
-        </Grid>
-      </Grid>
+      {Blog.map(() => {
+        <Grid
+          container
+          display={"flex"}
+          direction={"row"}
+          px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
+        >
+          <Grid item xs={12} sm={6} pb={4}>
+            <img
+              loading="lazy"
+              src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/je.ol.jpg"
+              alt="iamge"
+              width={"100%"}
+            ></img>
+          </Grid>
+          <Grid item xs={12} sm={6} px={4}>
+            <Typography variant="h4" color={"#333333"} mt={8}>
+              Upcomming lectures - details to follow soon
+            </Typography>
+            3
+            <Typography variant="h6" color={"#333333"} mt={10}>
+              London Excellere 19-20 May Chicago&nbsp; 23-24 July 2019 British
+              Orthodontic Society Conference&nbsp; September 2019 Amman 12-13
+              September New York 14-15…
+            </Typography>
+          </Grid>
+        </Grid>;
+      })}
     </Grid>
   );
 }
