@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-export const BlogDetail = () => {
+export default function BlogDetail() {
   return (
     <Grid>
       <Grid
@@ -22,4 +22,4 @@ export const BlogDetail = () => {
       </Grid>
     </Grid>
   );
-};
+}
