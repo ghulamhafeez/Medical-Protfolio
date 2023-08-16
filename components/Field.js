@@ -13,6 +13,7 @@ export const Field = (props) => {
         <img
           width={"100%"}
           object-fit="cover"
+          alt="image"
           src={`${FIRST_PATH}${props?.value}`}
         ></img>
       );
