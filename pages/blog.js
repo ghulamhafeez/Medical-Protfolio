@@ -83,6 +83,7 @@ export default function Blog() {
             display={"flex"}
             direction={"row"}
             px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
+            mb={2}
           >
             <Grid item xs={12} sm={6} pb={4}>
               <img
@@ -93,11 +94,11 @@ export default function Blog() {
               ></img>
             </Grid>
             <Grid item xs={12} sm={6} px={4}>
-              <Typography variant="h4" color={"#333333"} mt={8}>
+              <Typography variant="h4" color={"#333333"}>
                 {x.title}
               </Typography>
 
-              <Typography key={x} variant="h6" color={"#333333"} mt={10}>
+              <Typography key={x} variant="body1" color={"#333333"} mt={6}>
                 {x.description}
               </Typography>
             </Grid>
