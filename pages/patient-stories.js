@@ -4,15 +4,29 @@ import Typography from "@mui/material/Typography";
 import { PatientStoriesData } from "../constants/Constant";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
+import { supabase } from "./api/supabase";
+import { FIRST_PATH } from "../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
 export default function PatientStories() {
   const [open, setOpen] = useState(true);
+  const [patientStories, setPatientStories] = useState([]);
 
   useEffect(() => {
+    getPatientStories();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const getPatientStories = () => {
+    supabase
+      .from("patient_stories")
+      .select()
+      .then((response) => {
+        setPatientStories(response?.data);
+        console.log("response", response);
+      });
+  };
   return (
     <Grid>
       <Grid
@@ -46,7 +60,7 @@ export default function PatientStories() {
           Dr Haris
         </Typography>
       </Backdrop>
-      {PatientStoriesData.map((x) => {
+      {patientStories?.items?.map((x) => {
         return (
           <Grid
             container
@@ -56,11 +70,16 @@ export default function PatientStories() {
             px={{ xs: 2, sm: 5, md: 10, lg: 22 }}
           >
             <Grid item xs={12} sm={6} pb={4}>
-              <img loading="lazy" src={x.src} alt="iamge" width={"95%"}></img>
+              <img
+                loading="lazy"
+                src={`${FIRST_PATH}${x.value}`}
+                alt="iamge"
+                width={"95%"}
+              ></img>
             </Grid>
             <Grid item xs={12} sm={6} px={3}>
               <Typography variant="h6" color={"#333333"} mt={18}>
-                {x.story}
+                {x.value}
               </Typography>
             </Grid>
           </Grid>

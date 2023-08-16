@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../styles/Home.module.css";
-import Fab from "@mui/material/Fab";
+import styles from "../../styles/Home.module.css";
+import Link from "next/link";
 import AddIcon from "@mui/icons-material/Add";
-import { Grid } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import React from "react";
-import { FIRST_PATH } from "../constants/Constant";
-import { Field } from "../components/Field";
-import { supabase } from "./api/supabase";
+import { FIRST_PATH } from "../../constants/Constant";
+import { Field } from "../../components/Field";
+import { supabase } from "../api/supabase";
 import Button from "@mui/material/Button";
+import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
@@ -76,6 +76,7 @@ export default function Blog() {
       </Backdrop>
 
       {bolgs?.map((x) => {
+        const textDescription = x.items.find((x) => x.type === "text");
         return (
           <Grid
             key={x}
@@ -99,8 +100,26 @@ export default function Blog() {
               </Typography>
 
               <Typography key={x} variant="body1" color={"#333333"} mt={6}>
-                {x.description}
+                {textDescription?.value ?? ""}
               </Typography>
+              <Link href={"/blog-detail"} key={x}>
+                <Button
+                  sx={{
+                    mt: 4,
+                    borderRadius: 0,
+                    backgroundColor: "#AFB5B9",
+                    color: "white",
+                    // width: "100%",
+                    ":hover": {
+                      backgroundColor: "#89C1CB",
+                    },
+                  }}
+                  variant="contained"
+                  // onClick={}
+                >
+                  read more
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         );
