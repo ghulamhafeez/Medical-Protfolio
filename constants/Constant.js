@@ -95,3 +95,5 @@ export const Crowding = [
 export const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2YXRlamF2a3BqeHJ4dmJwdmRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTE3NTk2OTcsImV4cCI6MjAwNzMzNTY5N30.O2EzJrZ56q9M_t4IWFyNtq1aA1sY3g-U9eH7rXVawKE";
 export const SUPABASE_URL = "https://svatejavkpjxrxvbpvdp.supabase.co";
+export const FIRST_PATH =
+  "https://svatejavkpjxrxvbpvdp.supabase.co/storage/v1/object/public/media/";

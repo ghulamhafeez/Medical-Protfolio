@@ -6,9 +6,9 @@ import { Grid } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import React from "react";
-import CardContent from "@mui/material/CardContent";
-import Box from "@mui/material/Box";
-import Popper from "@mui/material/Popper";
+import { FIRST_PATH } from "../constants/Constant";
+import { Field } from "../components/Field";
+import { supabase } from "./api/supabase";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
@@ -37,6 +37,7 @@ export default function Blog() {
       .from("blog")
       .select()
       .then((response) => {
+        console.log("data", response);
         setBlogs(response?.data);
       });
   };
@@ -74,33 +75,34 @@ export default function Blog() {
         </Typography>
       </Backdrop>
 
-      {Blog.map(() => {
-        <Grid
-          container
-          display={"flex"}
-          direction={"row"}
-          px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
-        >
-          <Grid item xs={12} sm={6} pb={4}>
-            <img
-              loading="lazy"
-              src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/je.ol.jpg"
-              alt="iamge"
-              width={"100%"}
-            ></img>
+      {bolgs?.map((x) => {
+        return (
+          <Grid
+            key={x}
+            container
+            display={"flex"}
+            direction={"row"}
+            px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
+          >
+            <Grid item xs={12} sm={6} pb={4}>
+              <img
+                loading="lazy"
+                src={`${FIRST_PATH}${x.headerFile}`}
+                alt="iamge"
+                width={"100%"}
+              ></img>
+            </Grid>
+            <Grid item xs={12} sm={6} px={4}>
+              <Typography variant="h4" color={"#333333"} mt={8}>
+                {x.title}
+              </Typography>
+
+              <Typography key={x} variant="h6" color={"#333333"} mt={10}>
+                {x.description}
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} px={4}>
-            <Typography variant="h4" color={"#333333"} mt={8}>
-              Upcomming lectures - details to follow soon
-            </Typography>
-            3
-            <Typography variant="h6" color={"#333333"} mt={10}>
-              London Excellere 19-20 May Chicago&nbsp; 23-24 July 2019 British
-              Orthodontic Society Conference&nbsp; September 2019 Amman 12-13
-              September New York 14-15…
-            </Typography>
-          </Grid>
-        </Grid>;
+        );
       })}
     </Grid>
   );
