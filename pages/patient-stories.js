@@ -7,25 +7,12 @@ import { useEffect, useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 export default function PatientStories() {
   const [open, setOpen] = useState(true);
-  const [patientStories, setPatientStories] = React.useState([]);
 
   useEffect(() => {
-    getPatientStories();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
-
-  const getPatientStories = () => {
-    supabase
-      .from("patient_stories")
-      .select()
-      .then((response) => {
-        setPatientStories(response?.data);
-        console.log({ response });
-      });
-  };
-
   return (
     <Grid>
       <Grid
@@ -59,7 +46,7 @@ export default function PatientStories() {
           Dr Haris
         </Typography>
       </Backdrop>
-      {patientStories.map((x) => {
+      {PatientStoriesData.map((x) => {
         return (
           <Grid
             container
@@ -73,7 +60,7 @@ export default function PatientStories() {
             </Grid>
             <Grid item xs={12} sm={6} px={3}>
               <Typography variant="h6" color={"#333333"} mt={18}>
-                {x.value}
+                {x.story}
               </Typography>
             </Grid>
           </Grid>
