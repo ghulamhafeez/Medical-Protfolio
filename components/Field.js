@@ -1,6 +1,8 @@
 import React from "react";
 import { Youtube } from "../components/Youtube";
 import { FIRST_PATH } from "../constants/Constant";
+/* eslint-disable @next/next/no-img-element */
+
 export const Field = (props) => {
   switch (props?.type) {
     case "text":
