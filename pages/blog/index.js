@@ -16,7 +16,7 @@ import Backdrop from "@mui/material/Backdrop";
 export default function Blog() {
   const [open, setOpen] = useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [bolgs, setBlogs] = React.useState();
+  const [blogs, setBlogs] = React.useState();
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -75,7 +75,7 @@ export default function Blog() {
         </Typography>
       </Backdrop>
 
-      {bolgs?.map((x) => {
+      {blogs?.map((x) => {
         const textDescription = x.items.find((x) => x.type === "text");
         return (
           <Grid

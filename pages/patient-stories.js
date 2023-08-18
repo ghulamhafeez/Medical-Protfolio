@@ -9,7 +9,7 @@ import { FIRST_PATH } from "../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
 export default function PatientStories() {
   const [open, setOpen] = useState(true);
-  const [patientStories, setPatientStories] = useState([]);
+  const [patientStories, setPatientStories] = useState();
 
   useEffect(() => {
     getPatientStories();
@@ -24,7 +24,7 @@ export default function PatientStories() {
       .select()
       .then((response) => {
         setPatientStories(response?.data);
-        console.log("response", response);
+        console.log("response", response.data);
       });
   };
   return (
@@ -60,7 +60,9 @@ export default function PatientStories() {
           Dr Haris
         </Typography>
       </Backdrop>
-      {patientStories?.items?.map((x) => {
+      {patientStories?.map((x) => {
+        const text = x.items.find((x) => x.type === "text");
+        const file = x.items.find((x) => x.type === "file");
         return (
           <Grid
             container
@@ -72,14 +74,14 @@ export default function PatientStories() {
             <Grid item xs={12} sm={6} pb={4}>
               <img
                 loading="lazy"
-                src={`${FIRST_PATH}${x.value}`}
+                src={`${FIRST_PATH}${file.value}`}
                 alt="iamge"
                 width={"95%"}
               ></img>
             </Grid>
             <Grid item xs={12} sm={6} px={3}>
-              <Typography variant="h6" color={"#333333"} mt={18}>
-                {x.value}
+              <Typography variant="body1" color={"#333333"} mb={4}>
+                {text.value}
               </Typography>
             </Grid>
           </Grid>

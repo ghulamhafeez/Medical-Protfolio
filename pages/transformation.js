@@ -3,15 +3,29 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
+import { supabase } from "./api/supabase";
 /* eslint-disable @next/next/no-img-element */
+
 export default function Transformation() {
+  const [transformation, setTransformation] = useState();
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
+    getTransformation();
+
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const getTransformation = () => {
+    supabase
+      .from("transformation")
+      .select()
+      .then((response) => {
+        setTransformation(response?.data);
+      });
+  };
   return (
     <Grid>
       <Grid
