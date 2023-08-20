@@ -23,6 +23,7 @@ export default function Transformation() {
       .from("transformation")
       .select()
       .then((response) => {
+        console.log("asdresponse", response?.data);
         setTransformation(response?.data);
       });
   };

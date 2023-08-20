@@ -102,7 +102,7 @@ export default function Blog() {
               <Typography key={x} variant="body1" color={"#333333"} mt={6}>
                 {textDescription?.value ?? ""}
               </Typography>
-              <Link href={"/blog-detail"} key={x}>
+              <Link href={"blog/blog-detail"} key={x}>
                 <Button
                   sx={{
                     mt: 4,
