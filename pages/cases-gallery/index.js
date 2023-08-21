@@ -5,7 +5,7 @@ import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
-import { supabase } from "../supabase/supabase";
+import { supabase } from "../api/supabase";
 import { FIRST_PATH } from "../../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
 export default function CasesGallery() {
