@@ -52,7 +52,7 @@ export default function Contact() {
       <Grid
         bgcolor={"#89C1CB"}
         height={250}
-        mb={6}
+        mb={8}
         textAlign={"center"}
         pt={12}
       >
@@ -82,24 +82,6 @@ export default function Contact() {
       </Backdrop>
       <Grid>
         <Grid textAlign={"center"}>
-          <Grid px={{ xs: 5, sm: 28, md: 45, lg: 65 }}>
-            <Link href="/secure-referral">
-              <Button
-                sx={{
-                  backgroundColor: "#AFB5B9",
-                  color: "white",
-                  width: "100%",
-                  mb: 4,
-                  ":hover": {
-                    backgroundColor: "#89C1CB",
-                  },
-                }}
-                variant="contained"
-              >
-                Secure professional Referral
-              </Button>
-            </Link>
-          </Grid>
           <Typography
             variant="h6"
             gutterBottom
