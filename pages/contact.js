@@ -7,6 +7,7 @@ import Link from "next/link";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
+
 export default function Contact() {
   const [open, setOpen] = useState(true);
   const [name, setName] = useState();
@@ -21,11 +22,22 @@ export default function Contact() {
   }, []);
 
   const handleSubmit = () => {
-    console.log("Submit");
+    const data = {
+      name: name,
+      phone: phone,
+      email: email,
+      enquiry: enquiry,
+    };
+    fetch("/api/contactUs", {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
 
     supabase
       .from("contact")
-      .insert({ name: name, phone: phone, email: email, enquiry: enquiry })
+      .insert(data)
       .then((response) => {
         console.log("response", "response");
       });

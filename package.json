@@ -13,13 +13,17 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.1",
+    "@react-email/button": "0.0.10",
+    "@react-email/html": "0.0.4",
+    "@supabase/auth-helpers-nextjs": "^0.7.4",
+    "@supabase/supabase-js": "^2.32.0",
     "next": "13.4.12",
+    "nodemailer": "^6.9.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-email": "1.9.4",
     "react-facebook": "^9.0.12",
-    "swiper": "^9.0.2",
-    "@supabase/auth-helpers-nextjs": "^0.7.4",
-    "@supabase/supabase-js": "^2.32.0"
+    "swiper": "^9.0.2"
   },
   "devDependencies": {
     "eslint": "8.45.0",
