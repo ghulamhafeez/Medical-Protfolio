@@ -6,14 +6,35 @@ import Backdrop from "@mui/material/Backdrop";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
+import { supabase } from "./api/supabase";
 export default function Contact() {
   const [open, setOpen] = useState(true);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [enquiry, setEnquiry] = useState();
 
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const handleSubmit = () => {
+    console.log("Submit");
+
+    supabase
+      .from("contact")
+      .insert({ name: name, phone: phone, email: email, enquiry: enquiry })
+      .then((response) => {
+        console.log("response", "response");
+      });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setEnquiry("");
+  };
+
   return (
     <Grid display={"flex"} direction={"column"} container>
       <Grid
@@ -120,24 +141,32 @@ export default function Contact() {
             label="Name"
             variant="outlined"
             sx={{ width: "100%" }}
+            value={name}
+            onChange={(e) => setName(e.currentTarget.value)}
           />
           <TextField
             id="outlined-basic"
             label="Email Address"
             variant="outlined"
             sx={{ width: "100%" }}
+            value={email}
+            onChange={(e) => setEmail(e.currentTarget.value)}
           />
           <TextField
             id="outlined-basic"
             label="Phone Number"
             variant="outlined"
             sx={{ width: "100%" }}
+            value={phone}
+            onChange={(e) => setPhone(e.currentTarget.value)}
           />
           <TextField
             id="outlined-basic"
             label="Enquiry"
             variant="outlined"
             sx={{ width: "100%" }}
+            value={enquiry}
+            onChange={(e) => setEnquiry(e.currentTarget.value)}
           />
           <Grid>
             <Button
@@ -150,6 +179,7 @@ export default function Contact() {
                 },
               }}
               variant="contained"
+              onClick={handleSubmit}
             >
               Send Enquiry
             </Button>

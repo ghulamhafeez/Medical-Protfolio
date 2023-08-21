@@ -89,20 +89,23 @@ export default function TreatmentOptions() {
             spacing={4}
           >
             {/* <Grid item xs={12} sm={6} md={6} lg={6}> */}{" "}
-            <Link href="treatment-option/treatment-option-detail">
-              <Grid item display={"flex"} direction={"column"} gap={2}>
-                <img
-                  loading="lazy"
-                  src={`${FIRST_PATH}${x.headerFile}`}
-                  alt="iamge"
-                  width={"100%"}
-                ></img>
+            <Grid item display={"flex"} direction={"column"} gap={2}>
+              <img
+                loading="lazy"
+                src={`${FIRST_PATH}${x.headerFile}`}
+                alt="iamge"
+                width={"100%"}
+              ></img>
 
-                <Typography variant="h6" color={"#333333"}>
+              <Typography variant="h6" color={"#333333"}>
+                <Link
+                  href={`treatment-options/treatment-option-detail/${x.id}`}
+                >
+                  {" "}
                   {x.title}
-                </Typography>
-              </Grid>
-            </Link>
+                </Link>
+              </Typography>
+            </Grid>
             {/* </Grid> */}
           </Grid>
         );

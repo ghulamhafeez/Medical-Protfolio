@@ -5,15 +5,30 @@ import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
+import { supabase } from "../api/supabase";
+import { FIRST_PATH } from "../../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
 export default function CasesGallery() {
   const [open, setOpen] = useState(true);
+  const [casesGallery, setCasesGallery] = useState();
 
   useEffect(() => {
+    getCasesGallery();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const getCasesGallery = () => {
+    supabase
+      .from("cases_gallery")
+      .select()
+      .then((response) => {
+        console.log("data", response.data);
+        setCasesGallery(response?.data);
+      });
+  };
+
   return (
     <Grid>
       <Grid
@@ -50,7 +65,8 @@ export default function CasesGallery() {
       <CasesGalleryTabs></CasesGalleryTabs>
 
       <Grid>
-        {Crowding.map((x) => {
+        {casesGallery?.map((x) => {
+          console.log("x", x);
           return (
             <Grid
               key={x}
@@ -60,18 +76,47 @@ export default function CasesGallery() {
               mt={5}
               px={{ xs: 2, sm: 6, md: 8, lg: 36, xl: 48 }}
             >
-              <Typography variant="h6">{x.title}</Typography>
-              <Grid container key={x} spacing={4}>
+              <Grid direction={"row"} container>
+                <Typography variant="h6">Before</Typography>
+
+                {x.beforeFile.map((x) => {
+                  return (
+                    <Grid key={x} xs={4}>
+                      <img
+                        loading="lazy"
+                        alt="iamge"
+                        src={`${FIRST_PATH}${x}`}
+                        width={"100%"}
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+              <Grid container direction={"column"}>
+                <Typography variant="h6">After</Typography>
+
+                {x.afterFile.map((x) => {
+                  return (
+                    <Grid key={x} xs={4}>
+                      <img
+                        loading="lazy"
+                        alt="iamge"
+                        src={`${FIRST_PATH}${x}`}
+                        width={"100%"}
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+
+              {/* <Grid container key={x} spacing={4}>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" alt="iamge" src={x.src1} width={"100%"} />
-                </Grid>
-                <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" alt="iamge" src={x.src2} width={"100%"} />
+                  <img loading="lazy" alt="iamge" src={""} width={"100%"} />
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
                   <img loading="lazy" alt="iamge" src={x.src3} width={"100%"} />
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Grid>
           );
         })}

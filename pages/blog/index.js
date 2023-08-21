@@ -76,6 +76,7 @@ export default function Blog() {
       </Backdrop>
 
       {blogs?.map((x) => {
+        console.log("x", x);
         const textDescription = x.items.find((x) => x.type === "text");
         return (
           <Grid
@@ -99,10 +100,10 @@ export default function Blog() {
                 {x.title}
               </Typography>
 
-              <Typography key={x} variant="body1" color={"#333333"} mt={6}>
+              <Typography variant="body1" color={"#333333"} mt={6}>
                 {textDescription?.value ?? ""}
               </Typography>
-              <Link href={"blog/blog-detail"} key={x}>
+              <Link href={`blog/blog-detail/${x.id}`}>
                 <Button
                   sx={{
                     mt: 4,
