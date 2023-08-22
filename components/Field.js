@@ -9,7 +9,7 @@ export const Field = (props) => {
     case "file":
       return (
         <img
-          width={"100%"}
+          width={props.width}
           object-fit="cover"
           alt="image"
           src={`${FIRST_PATH}${props?.value}`}

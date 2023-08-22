@@ -74,39 +74,40 @@ export default function CasesGallery() {
               direction={"column"}
               mb={4}
               mt={5}
-              px={{ xs: 2, sm: 6, md: 8, lg: 36, xl: 48 }}
+              px={{ xs: 2, sm: 6, md: 8, lg: 36, xl: 42 }}
             >
-              <Grid direction={"row"} container>
+              <Grid mt={2} direction={"column"} container>
                 <Typography variant="h6">Before</Typography>
-
-                {x.beforeFile.map((x) => {
-                  return (
-                    <Grid key={x} xs={4}>
+                <Grid display={"flex"} xs={4} gap={3}>
+                  {x.beforeFile.map((x) => {
+                    return (
                       <img
+                        key={x}
                         loading="lazy"
                         alt="iamge"
                         src={`${FIRST_PATH}${x}`}
-                        width={"100%"}
+                        width={320}
                       />
-                    </Grid>
-                  );
-                })}
+                    );
+                  })}
+                </Grid>
               </Grid>
-              <Grid container direction={"column"}>
+              <Grid mt={2} container direction={"column"}>
                 <Typography variant="h6">After</Typography>
-
-                {x.afterFile.map((x) => {
-                  return (
-                    <Grid key={x} xs={4}>
+                <Grid xs={4} display={"flex"} gap={3}>
+                  {x.afterFile.map((x) => {
+                    return (
                       <img
+                        key={x}
                         loading="lazy"
                         alt="iamge"
                         src={`${FIRST_PATH}${x}`}
-                        width={"100%"}
+                        width={320}
+                        height={220}
                       />
-                    </Grid>
-                  );
-                })}
+                    );
+                  })}
+                </Grid>
               </Grid>
 
               {/* <Grid container key={x} spacing={4}>

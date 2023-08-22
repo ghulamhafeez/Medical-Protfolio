@@ -75,26 +75,24 @@ export default function TreatmentOptions() {
       >
         Please find below a range of orthodontic treatment options
       </Typography>
-      {treatmentOption?.map((x) => {
-        return (
-          <Grid
-            key={x}
-            container
-            // display={"flex"}
-            flexWrap={"wrap"}
-            // direction={"row"}
-            textAlign={"center"}
-            mb={6}
-            px={{ xs: 2, sm: 4, md: 12, lg: 32, xl: 42 }}
-            spacing={4}
-          >
-            {/* <Grid item xs={12} sm={6} md={6} lg={6}> */}{" "}
-            <Grid item display={"flex"} direction={"column"} gap={2}>
+      <Grid
+        container
+        // display={"flex"}
+        flexWrap={"wrap"}
+        direction={"row"}
+        // textAlign={"center"}
+        mb={6}
+        px={{ xs: 1, sm: 22, md: 13, lg: 36, xl: 45 }}
+        spacing={4}
+      >
+        {treatmentOption?.map((x) => {
+          return (
+            <Grid item direction={"column"} key={x}>
               <img
                 loading="lazy"
                 src={`${FIRST_PATH}${x.headerFile}`}
                 alt="iamge"
-                width={"100%"}
+                width={380}
               ></img>
 
               <Typography variant="h6" color={"#333333"}>
@@ -106,10 +104,9 @@ export default function TreatmentOptions() {
                 </Link>
               </Typography>
             </Grid>
-            {/* </Grid> */}
-          </Grid>
-        );
-      })}
+          );
+        })}
+      </Grid>
     </Grid>
   );
 }

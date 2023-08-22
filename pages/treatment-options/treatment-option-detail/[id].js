@@ -63,7 +63,7 @@ export default function TreatmentOptionDetail() {
                 mb={2}
                 mt={2}
               >
-                <Field type={x?.type} value={x?.value} />
+                <Field type={x?.type} value={x?.value} width={400} />
               </Grid>
             );
           })}
