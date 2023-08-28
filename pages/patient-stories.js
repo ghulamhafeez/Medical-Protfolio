@@ -22,6 +22,7 @@ export default function PatientStories() {
     supabase
       .from("patient_stories")
       .select()
+      .order("id", { ascending: false })
       .then((response) => {
         setPatientStories(response?.data);
         console.log("response", response.data);

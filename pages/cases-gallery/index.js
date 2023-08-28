@@ -23,6 +23,7 @@ export default function CasesGallery() {
     supabase
       .from("cases_gallery")
       .select()
+      .order("id", { ascending: false })
       .then((response) => {
         console.log("data", response.data);
         setCasesGallery(response?.data);

@@ -36,6 +36,7 @@ export default function Blog() {
     supabase
       .from("blog")
       .select()
+      .order("id", { ascending: false })
       .then((response) => {
         console.log("data", response);
         setBlogs(response?.data);

@@ -28,6 +28,7 @@ export default function Transformation() {
     supabase
       .from("transformation")
       .select()
+      .order("id", { ascending: false })
       .then((response) => {
         console.log("asdresponse", response?.data);
         setTransformation(response?.data);

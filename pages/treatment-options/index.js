@@ -23,6 +23,7 @@ export default function TreatmentOptions() {
     supabase
       .from("treatment_option")
       .select()
+      .order("id", { ascending: false })
       .then((response) => {
         console.log("asdresponse", response?.data);
         setTreatmentOption(response?.data);
