@@ -18,7 +18,7 @@ export default function TreatmentOptionDetail() {
     // setTimeout(() => {
     //   setOpen(false);
     // }, 500);
-  }, []);
+  }, [id]);
 
   const getTreatmentOption = () => {
     supabase
@@ -50,7 +50,7 @@ export default function TreatmentOptionDetail() {
           </Typography>
         </Grid>
 
-        <Grid px={{ xs: 2, sm: 5, md: 10, lg: 28 }}>
+        <Grid px={{ xs: 2, sm: 5, md: 10, lg: 28, xl: 42 }}>
           <Typography variant="h5">{treatmentOption?.title}</Typography>
           {treatmentOption?.items.map((x) => {
             console.log("x", x);

@@ -80,7 +80,7 @@ export default function TreatmentOptions() {
         flexWrap={"wrap"}
         direction={"row"}
         mb={6}
-        px={{ xs: 1, sm: 22, md: 13, lg: 36, xl: 45 }}
+        px={{ xs: 1, sm: 22, md: 8, lg: 34, xl: 40 }}
         spacing={4}
       >
         {treatmentOption?.map((x) => {
@@ -90,7 +90,8 @@ export default function TreatmentOptions() {
                 loading="lazy"
                 src={`${FIRST_PATH}${x.headerFile}`}
                 alt="iamge"
-                width={380}
+                width={"100%"}
+                height={280}
               ></img>
 
               <Typography variant="h6" color={"#333333"}>

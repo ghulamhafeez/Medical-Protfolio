@@ -37,10 +37,8 @@ export const Footer = () => {
           <Link href={"https://www.facebook.com/"}>
             <FacebookOutlinedIcon
               sx={{
-                // pr: 2,
                 fontSize: 45,
                 color: "white",
-
                 ":hover": {
                   color: "#89C1CB",
                 },

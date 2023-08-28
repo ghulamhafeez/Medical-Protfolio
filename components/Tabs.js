@@ -12,7 +12,6 @@ export default function Tabs() {
       pt={2}
       pb={1}
       px={{ sm: 2, md: 5, lg: 22, xl: 26 }}
-      // className={styles.tabs}
       bgcolor={"white"}
       visibility={{}}
     >

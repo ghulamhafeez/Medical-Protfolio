@@ -54,7 +54,6 @@ export default function Header() {
                 ml: 2,
                 color: "white",
               }}
-              // className={styles.menu}
               onClick={() => setOpen(true)}
             />
           </Grid>
@@ -73,8 +72,6 @@ export default function Header() {
               src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/dr-ektor.png"
               alt="dr ektor grammatopoulos orthodontics logo1"
               width={"100%"}
-
-              // className={styles.img}
             ></img>
           </Grid>
         </Grid>
@@ -87,9 +84,7 @@ export default function Header() {
           xs={12}
           sm={4}
           item
-          // ml={{ xs: 12, sm: 1, md: 1, lg: 20, xl: 30 }}
           px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
-          // justifyContent={"center"}
           textAlign={"center"}
         >
           <Grid>
@@ -139,7 +134,6 @@ export default function Header() {
                 color: "white",
                 ml: 2,
               }}
-              // className={styles.menu}
               onClick={() => setOpen(true)}
             />
             {TabsData?.map((x) => {

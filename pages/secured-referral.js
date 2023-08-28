@@ -182,7 +182,7 @@ export default function SecuredReferral() {
           sx={{
             backgroundColor: "#AFB5B9",
             color: "white",
-            width: "30px",
+            width: "45px",
             mb: 4,
             ":hover": {
               backgroundColor: "#89C1CB",
