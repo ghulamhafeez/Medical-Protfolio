@@ -18,7 +18,7 @@ export default function BlogDetail() {
     // setTimeout(() => {
     //   setOpen(false);
     // }, 500);
-  }, []);
+  }, [id]);
 
   const getBlog = () => {
     supabase
@@ -60,23 +60,29 @@ export default function BlogDetail() {
               container
               display={"flex"}
               direction={"row"}
-              px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
+              px={{ xs: 2, sm: 5, md: 10, lg: 32 }}
               mb={2}
+              spacing={2}
             >
-              <Field type={x?.type} value={x?.value} />
-              {/* <Grid item xs={12} sm={6} pb={4}>
-                <img
-                  loading="lazy"
-                  src={`${FIRST_PATH}${x.value}`}
-                  alt="iamge"
-                  width={"100%"}
-                ></img>
+              {/* <Field type={x?.type} value={x?.value} /> */}
+
+              <Grid item xs={12} sm={6} px={4}>
+                {x?.type == "file" && (
+                  <img
+                    loading="lazy"
+                    src={`${FIRST_PATH}${x?.value}`}
+                    alt="iamge"
+                    width={"100%"}
+                  ></img>
+                )}
               </Grid>
               <Grid item xs={12} sm={6} px={4}>
-                <Typography variant="body1" color={"#333333"} mt={6}>
-                  {x.value}
-                </Typography>
-              </Grid> */}
+                {x?.type == "text" && (
+                  <Typography variant="body1" color={"#333333"}>
+                    {x?.value}
+                  </Typography>
+                )}
+              </Grid>
             </Grid>
           );
         })}

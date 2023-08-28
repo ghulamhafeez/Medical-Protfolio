@@ -77,10 +77,8 @@ export default function TreatmentOptions() {
       </Typography>
       <Grid
         container
-        // display={"flex"}
         flexWrap={"wrap"}
         direction={"row"}
-        // textAlign={"center"}
         mb={6}
         px={{ xs: 1, sm: 22, md: 13, lg: 36, xl: 45 }}
         spacing={4}

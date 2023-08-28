@@ -79,7 +79,7 @@ export default function PatientStories() {
                 width={"95%"}
               ></img>
             </Grid>
-            <Grid item xs={12} sm={6} px={3}>
+            <Grid item xs={12} sm={6} px={3} mt={4}>
               <Typography variant="body1" color={"#333333"} mb={4}>
                 {text.value}
               </Typography>
