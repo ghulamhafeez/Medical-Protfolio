@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 export default function Tabs() {
   return (
     <Grid
-      // display={"flex"}
       display={{ xs: "none", sm: "flex" }}
       flexWrap={"wrap"}
       pt={2}

@@ -53,7 +53,6 @@ export default function TreatmentOptionDetail() {
         <Grid px={{ xs: 2, sm: 5, md: 10, lg: 28, xl: 42 }}>
           <Typography variant="h5">{treatmentOption?.title}</Typography>
           {treatmentOption?.items.map((x) => {
-            console.log("x", x);
             return (
               <Grid
                 key={x}

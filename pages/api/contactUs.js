@@ -1,9 +1,8 @@
 import nodemailer from "nodemailer";
 
 export default function handler(req, res) {
-  console.log("req", req.body);
   const data = JSON.parse(req.body);
-  console.log("Name", data.name);
+
   // if (req.method === "POST") {
   let transporter = nodemailer.createTransport({
     service: "gmail",

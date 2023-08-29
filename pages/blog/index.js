@@ -77,7 +77,6 @@ export default function Blog() {
       </Backdrop>
 
       {blogs?.map((x) => {
-        console.log("x", x);
         const textDescription = x.items.find((x) => x.type === "text");
         return (
           <Grid

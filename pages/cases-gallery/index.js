@@ -67,7 +67,6 @@ export default function CasesGallery() {
 
       <Grid>
         {casesGallery?.map((x) => {
-          console.log("x", x);
           return (
             <Grid
               key={x}

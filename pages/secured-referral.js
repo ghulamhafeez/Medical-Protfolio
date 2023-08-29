@@ -61,7 +61,6 @@ export default function SecuredReferral() {
       });
   };
   const handleFile = (e) => {
-    console.log("res123", e?.target?.files[0]);
     const filedata = e?.target?.files[0];
 
     supabase.storage
@@ -118,9 +117,6 @@ export default function SecuredReferral() {
         mt={10}
         item
         xs={12}
-        sm={12}
-        md={12}
-        lg={12}
         px={{ xs: 2, sm: 3, md: 8, lg: 20 }}
         mb={5}
       >

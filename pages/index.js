@@ -114,14 +114,7 @@ export default function Home() {
                     width={"100%"}
                   ></img>
                 </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  textAlign={"left"}
-                  // pl={4}
-                  // px={{ xs: 2, sm: 5, md: 10, lg: 20 }}
-                >
+                <Grid item xs={12} sm={6} textAlign={"left"}>
                   <Typography
                     variant="h6"
                     color={"#333333"}

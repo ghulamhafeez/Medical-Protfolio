@@ -53,8 +53,6 @@ export default function BlogDetail() {
         </Grid>
         <Grid
           container
-          // display={"flex"}
-          // direction={"row"}
           alignItems="center"
           px={{ xs: 2, sm: 5, md: 10, lg: 32 }}
           mb={2}

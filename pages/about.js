@@ -6,11 +6,12 @@ import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import { FIRST_PATH } from "../constants/Constant";
 import { supabase } from "./api/supabase";
+
 export default function About() {
   const [open, setOpen] = useState(true);
   const [bio, setBio] = useState("");
   const [avatarImg, setAvatarImg] = useState("");
-  const [about, setAbout] = useState();
+
   useEffect(() => {
     getAboutData();
     setTimeout(() => {
@@ -26,7 +27,7 @@ export default function About() {
       .single()
       .then((response) => {
         console.log("response", response?.data);
-        // setAbout(response?.data);
+
         setBio(response?.data?.bio);
         setAvatarImg(response?.data?.avatarImg);
       });
