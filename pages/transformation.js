@@ -41,10 +41,15 @@ export default function Transformation() {
         return (
           <Grid key={x} display={"flex"} direction={"column"}>
             <CardHeader
+              sx={{ ml: 2 }}
               title={x.title}
               // <Typography variant="h6">{x.title}</Typography>
             />
-            <Grid container spacing={4} padding={2}>
+            <Grid
+              container
+              spacing={{ xl: 24, lg: 20, md: 12, sm: 6, xs: 2 }}
+              padding={2}
+            >
               <Grid item xs={6} display={"flex"} direction={"column"}>
                 <Typography variant="body1" ml={2}>
                   Before
@@ -56,14 +61,14 @@ export default function Transformation() {
                     boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.7",
                   }}
                 > */}
-                <Grid p={2}>
+                <Grid mt={2}>
                   {x.beforeFile.map((x) => {
                     return (
                       <Grid key={x}>
                         {/* <Field type={x?.type} value={x?.value} /> */}
                         <img
                           width={"100%"}
-                          height={200}
+                          height={270}
                           object-fit="cover"
                           src={`${FIRST_PATH}${x}`}
                           multiple
@@ -85,14 +90,14 @@ export default function Transformation() {
                     boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.7",
                   }}
                 > */}
-                <Grid p={2}>
+                <Grid mt={2}>
                   {x.afterFile.map((x) => {
                     return (
                       <Grid key={x}>
                         {/* <Field type={x?.type} value={x?.value} /> */}
                         <img
                           width={"100%"}
-                          height={200}
+                          height={270}
                           object-fit="cover"
                           src={`${FIRST_PATH}${x}`}
                           multiple

@@ -5,14 +5,79 @@ import TextField from "@mui/material/TextField";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
+import { supabase } from "./api/supabase";
+
 export default function SecuredReferral() {
   const [open, setOpen] = useState(true);
+
+  const [securedData, setSecuredData] = useState({
+    firstName: "",
+    surName: "",
+    email: "",
+    dayPhone: "",
+    address: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    guardianName: "",
+    relationPatient: "",
+    dentistName: "",
+    dentistPhone: "",
+    notes: "",
+    recordeFile: "",
+  });
 
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const handleSubmit = () => {
+    const data = {
+      firstName: securedData?.firstName,
+      surName: securedData?.surName,
+      email: securedData?.email,
+      dayPhone: securedData?.dayPhone,
+      address: securedData?.address,
+      streetAddress: securedData?.streetAddress,
+      city: securedData?.city,
+      state: securedData?.state,
+      zipCode: securedData?.zipCode,
+      guardianName: securedData?.guardianName,
+      relationPatient: securedData?.relationPatient,
+      dentistName: securedData?.dentistName,
+      dentistPhone: securedData?.dentistPhone,
+      notes: securedData?.notes,
+      recordeFile: securedData?.recordeFile,
+    };
+    console.log("called");
+    console.log("securedData", securedData);
+    supabase
+      .from("secured_referral")
+      .insert(data)
+      .then((response) => {
+        console.log("responseS", response);
+      });
+  };
+  const handleFile = (e) => {
+    console.log("res123", e?.target?.files[0]);
+    const filedata = e?.target?.files[0];
+
+    supabase.storage
+      .from("media")
+      .upload(filedata?.name + Date.now(), filedata, {
+        cacheControl: "3600",
+        upsert: false,
+      })
+      .then((res) => {
+        console.log("res", res?.data);
+        setSecuredData({ ...securedData, recordeFile: res?.data?.path });
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Grid>
       <Grid
@@ -73,72 +138,120 @@ export default function SecuredReferral() {
           label="First Name"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.firstName}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, firstName: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
-          label="Surname"
+          label="Sur Name"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.surName}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, surName: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Email"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.email}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, email: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Daytime Telephone Number"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.dayPhone}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, dayPhone: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Address"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.address}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, address: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Street Address"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.streetAddress}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, streetAddress: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="City"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.city}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, city: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="State/Province/Region"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.state}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, state: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Postal/Zip Code"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.zipCode}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, zipCode: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Name of Parent or Guardian If under 16 years of age"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.guardianName}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, guardianName: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Relationship to Patient If a parent of guardian"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.relationPatient}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, relationPatient: e.target.value })
+          }
         />
         <Typography
           variant="h3"
           color={"#333333"}
           fontSize={{ xs: "25px", sm: "25px", md: "25px", lg: "25px" }}
           textAlign={"left"}
+          value={securedData?.guardianName}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, guardianName: e.target.value })
+          }
         >
           Reffering Dentist`s Details
         </Typography>
@@ -147,38 +260,46 @@ export default function SecuredReferral() {
           label="Dentist`s Name"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.dentistName}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, dentistName: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Dentist`s Telephone Number"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.dentistPhone}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, dentistPhone: e.target.value })
+          }
         />
         <TextField
           id="outlined-basic"
           label="Notes/Comments/Resons for Referal"
           variant="outlined"
           sx={{ width: "100%" }}
+          value={securedData?.notes}
+          onChange={(e) =>
+            setSecuredData({ ...securedData, notes: e.target.value })
+          }
         />
         <Typography variant="body1" textAlign={"left"}>
           Upload Records
         </Typography>
-
         <input
           type="file"
-          name="fld_3288429"
-          value=""
-          data-field="fld_3288429"
-          id="fld_3288429_1"
-          data-controlid="trupl64bfeadbe0d10"
-          aria-labelledby="fld_3288429Label"
-          aria-describedby="fld_3288429Caption"
+          value={securedData?.recordeFile}
+          onChange={(e) => handleFile(e)}
         />
+
         <Typography variant="body2" color={"grey"} textAlign={"left"}>
           We only accept .pdf &amp; .doc files up to a size of 2mb. If you need
           to send us more, please contact us for an alternative method
         </Typography>
         <Button
+          onClick={() => handleSubmit()}
           sx={{
             backgroundColor: "#AFB5B9",
             color: "white",
