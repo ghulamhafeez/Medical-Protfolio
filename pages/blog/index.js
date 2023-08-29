@@ -86,7 +86,7 @@ export default function Blog() {
             display={"flex"}
             direction={"row"}
             px={{ xs: 2, sm: 5, md: 10, lg: 28 }}
-            mb={2}
+            mb={4}
           >
             <Grid item xs={12} sm={6} pb={4}>
               <img

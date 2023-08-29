@@ -25,7 +25,7 @@ export default function SecuredReferral() {
     dentistName: "",
     dentistPhone: "",
     notes: "",
-    recordeFile: "",
+    recordsFile: "",
   });
 
   useEffect(() => {
@@ -50,10 +50,9 @@ export default function SecuredReferral() {
       dentistName: securedData?.dentistName,
       dentistPhone: securedData?.dentistPhone,
       notes: securedData?.notes,
-      recordeFile: securedData?.recordeFile,
+      recordsFile: securedData?.recordsFile,
     };
-    console.log("called");
-    console.log("securedData", securedData);
+
     supabase
       .from("secured_referral")
       .insert(data)
@@ -72,8 +71,8 @@ export default function SecuredReferral() {
         upsert: false,
       })
       .then((res) => {
-        console.log("res", res?.data);
-        setSecuredData({ ...securedData, recordeFile: res?.data?.path });
+        console.log("res", res?.data?.path);
+        setSecuredData({ ...securedData, recordsFile: res?.data?.path });
       })
       .catch((err) => console.log(err));
   };
@@ -288,11 +287,7 @@ export default function SecuredReferral() {
         <Typography variant="body1" textAlign={"left"}>
           Upload Records
         </Typography>
-        <input
-          type="file"
-          value={securedData?.recordeFile}
-          onChange={(e) => handleFile(e)}
-        />
+        <input type="file" value={""} onChange={(e) => handleFile(e)} />
 
         <Typography variant="body2" color={"grey"} textAlign={"left"}>
           We only accept .pdf &amp; .doc files up to a size of 2mb. If you need
