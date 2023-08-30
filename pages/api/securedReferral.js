@@ -37,15 +37,15 @@ export default function handler(req, res) {
     <br/>  <div><strong>Dentist Name:</strong> ${data.dentistName}</div>
     <br/>  <div><strong>Dentist Phone:</strong> ${data.dentistPhone}</div>
     <br/>  <div><strong>Notes:</strong> ${data.notes}</div>
-    <br/>  <div><strong>Records File:</strong> ${(
+    <br/>  <div><strong>Records File:</strong> 
       <img
         loading="lazy"
-        src={`${FIRST_PATH}${data.recordsFile}`}
+        src={${FIRST_PATH}${data.recordsFile}}
         alt="iamge"
-        width={120}
-        height={120}
+        width=${150}
+        height=${150}
       />
-    )}
+   
   </div>
     <br/>
        `,
