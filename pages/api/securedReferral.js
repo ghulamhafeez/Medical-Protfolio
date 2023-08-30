@@ -31,19 +31,21 @@ export default function handler(req, res) {
     <br/>  <div><strong>Atreet Address:</strong> ${data.streetAddress}</div>
     <br/>  <div><strong>City:</strong> ${data.city}</div>
     <br/>  <div><strong>State:</strong> ${data.state}</div>
-    <br/>  <div><strong>ZipCode:</strong> ${data.zipCode}</div>
-    <br/>  <div><strong>GuardianName:</strong> ${data.guardianName}</div>
-    <br/>  <div><strong>RelationPatient:</strong> ${data.relationPatient}</div>
-    <br/>  <div><strong>DentistName:</strong> ${data.dentistName}</div>
-    <br/>  <div><strong>DentistPhone:</strong> ${data.dentistPhone}</div>
+    <br/>  <div><strong>Zip Code:</strong> ${data.zipCode}</div>
+    <br/>  <div><strong>Guardian Name:</strong> ${data.guardianName}</div>
+    <br/>  <div><strong>Relation Patient:</strong> ${data.relationPatient}</div>
+    <br/>  <div><strong>Dentist Name:</strong> ${data.dentistName}</div>
+    <br/>  <div><strong>Dentist Phone:</strong> ${data.dentistPhone}</div>
     <br/>  <div><strong>Notes:</strong> ${data.notes}</div>
-    <br/>  <div>Records File:<img
-    loading="lazy"
-    src=${FIRST_PATH}${data.recordsFile}
-    alt="iamge"
-    width={120}
-    height={120}
-  /> 
+    <br/>  <div><strong>Records File:</strong> ${(
+      <img
+        loading="lazy"
+        src={`${FIRST_PATH}${data.recordsFile}`}
+        alt="iamge"
+        width={120}
+        height={120}
+      />
+    )}
   </div>
     <br/>
        `,
