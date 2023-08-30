@@ -3,14 +3,13 @@ import nodemailer from "nodemailer";
 export default function handler(req, res) {
   const data = JSON.parse(req.body);
 
-  // if (req.method === "POST") {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gamil.com",
     port: 587,
     auth: {
-      user: "baleesha01@gmail.com",
-      pass: "yydoqsfjmlkepnxr",
+      user: "gm7847198@gmail.com",
+      pass: "upirxzaaxrgfoiss",
     },
     tls: {
       rejectUnauthorized: false,
@@ -18,13 +17,11 @@ export default function handler(req, res) {
   });
 
   let message = {
-    from: "baleesha01@gmail.com",
+    from: "gm7847198@gmail.com",
     to: "ghulamhafeez.dev@gmail.com",
 
     subject: `Hello World`,
-    // template: "email",
 
-    // text: req.body.values.message + " | Sent from: " + req.body.values.email,
     html: `
         <div><strong>Name:</strong> ${data.name}</div>
         <br/>
@@ -39,10 +36,12 @@ export default function handler(req, res) {
     .sendMail(message)
     .then((response) => {
       console.log("response", response);
+      res.status(200).json("Ok");
     })
     .catch((error) => {
       console.log("Error :", error);
+      res.status(401).json(error);
     });
-  // }
-  res.status(200).json(req.body);
+
+  // res.status(200).json(req.body);
 }
