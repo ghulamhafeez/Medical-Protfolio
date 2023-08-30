@@ -36,7 +36,7 @@ export default function handler(req, res) {
     .sendMail(message)
     .then((response) => {
       console.log("response", response);
-      res.status(200).json("ok");
+      res.status(200).json("Ok");
     })
     .catch((error) => {
       console.log("Error :", error);

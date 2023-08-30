@@ -52,7 +52,12 @@ export default function SecuredReferral() {
       notes: securedData?.notes,
       recordsFile: securedData?.recordsFile,
     };
-
+    fetch("/api/securedReferral", {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
     supabase
       .from("secured_referral")
       .insert(data)
