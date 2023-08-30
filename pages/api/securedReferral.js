@@ -39,8 +39,8 @@ export default function handler(req, res) {
     <br/>  <div><strong>Notes:</strong> ${data.notes}</div>
     <br/>  <div><strong>Records File:</strong> 
       <img
-        loading="lazy"
-        src={${FIRST_PATH}${data.recordsFile}}
+
+        src=${FIRST_PATH}${data.recordsFile}
         alt="iamge"
         width=${150}
         height=${150}
