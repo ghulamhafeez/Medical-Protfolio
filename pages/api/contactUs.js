@@ -36,12 +36,12 @@ export default function handler(req, res) {
     .sendMail(message)
     .then((response) => {
       console.log("response", response);
-      res.status(200).json("Ok");
+      // res.status(200).json("Ok");
     })
     .catch((error) => {
       console.log("Error :", error);
       res.status(401).json(error);
     });
 
-  // res.status(200).json(req.body);
+  res.status(200).json("Ok");
 }
