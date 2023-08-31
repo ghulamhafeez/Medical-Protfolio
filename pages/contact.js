@@ -3,49 +3,78 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Backdrop from "@mui/material/Backdrop";
-import Link from "next/link";
+import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
 
 export default function Contact() {
   const [open, setOpen] = useState(true);
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [enquiry, setEnquiry] = useState();
+  // const [name, setName] = useState();
+  // const [email, setEmail] = useState();
+  // const [phone, setPhone] = useState();
+  // const [enquiry, setEnquiry] = useState();
 
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+  const { handleBlur, handleChange, values, handleSubmit } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      enquiry: "",
+    },
+    onSubmit: (values, { resetForm }) => {
+      const data = {
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        enquiry: values.enquiry,
+      };
+      fetch("/api/contactUs", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((res) => console.log("res", res))
+        .catch((err) => console.log("err", err));
 
-  const handleSubmit = () => {
-    const data = {
-      name: name,
-      phone: phone,
-      email: email,
-      enquiry: enquiry,
-    };
-    fetch("/api/contactUs", {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then((res) => console.log("res", res))
-      .catch((err) => console.log("err", err));
+      supabase
+        .from("contact")
+        .insert(data)
+        .then((response) => {
+          console.log("response", response);
+        });
+      resetForm({ name: "", email: "", phone: "", enquiry: "" });
+    },
+  });
+  // const handleSubmit = () => {
+  //   const data = {
+  //     name: name,
+  //     phone: phone,
+  //     email: email,
+  //     enquiry: enquiry,
+  //   };
+  //   fetch("/api/contactUs", {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((res) => console.log("res", res))
+  //     .catch((err) => console.log("err", err));
 
-    supabase
-      .from("contact")
-      .insert(data)
-      .then((response) => {
-        console.log("response", "response");
-      });
-    setName("");
-    setEmail("");
-    setPhone("");
-    setEnquiry("");
-  };
+  //   supabase
+  //     .from("contact")
+  //     .insert(data)
+  //     .then((response) => {
+  //       console.log("response", "response");
+  //     });
+  //   setName("");
+  //   setEmail("");
+  //   setPhone("");
+  //   setEnquiry("");
+  // };
 
   return (
     <Grid display={"flex"} direction={"column"} container>
@@ -117,68 +146,80 @@ export default function Contact() {
             11-12 Wimpole <br></br>Street London <br></br> W1G 9ST
           </Typography>
         </Grid>
-        <Grid
-          display={"flex"}
-          direction={"column"}
-          textAlign={"center"}
-          gap={3}
-          mt={10}
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          px={{ xs: 3, sm: 25, md: 36, lg: 56, xl: 60 }}
-        >
-          <TextField
-            id="outlined-basic"
-            label="Name"
-            variant="outlined"
-            sx={{ width: "100%" }}
-            value={name}
-            onChange={(e) => setName(e.currentTarget.value)}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Email Address"
-            variant="outlined"
-            sx={{ width: "100%" }}
-            value={email}
-            onChange={(e) => setEmail(e.currentTarget.value)}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Phone Number"
-            variant="outlined"
-            sx={{ width: "100%" }}
-            value={phone}
-            onChange={(e) => setPhone(e.currentTarget.value)}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Enquiry"
-            variant="outlined"
-            sx={{ width: "100%" }}
-            value={enquiry}
-            onChange={(e) => setEnquiry(e.currentTarget.value)}
-          />
-          <Grid>
-            <Button
-              sx={{
-                backgroundColor: "#AFB5B9",
-                color: "white",
-                width: "45%",
-                ":hover": {
-                  backgroundColor: "#89C1CB",
-                },
-              }}
-              variant="contained"
-              onClick={handleSubmit}
-            >
-              Send Enquiry
-            </Button>
+        <form onSubmit={handleSubmit}>
+          <Grid
+            display={"flex"}
+            direction={"column"}
+            textAlign={"center"}
+            gap={3}
+            mt={10}
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            px={{ xs: 3, sm: 25, md: 36, lg: 56, xl: 60 }}
+          >
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              name="name"
+              variant="outlined"
+              sx={{ width: "100%" }}
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Email Address"
+              name="email"
+              variant="outlined"
+              sx={{ width: "100%" }}
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Phone Number"
+              name="phone"
+              variant="outlined"
+              sx={{ width: "100%" }}
+              value={values.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Enquiry"
+              name="enquiry"
+              variant="outlined"
+              sx={{ width: "100%" }}
+              value={values.enquiry}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+
+            <Grid>
+              <Button
+                sx={{
+                  backgroundColor: "#AFB5B9",
+                  color: "white",
+                  width: "45%",
+                  ":hover": {
+                    backgroundColor: "#89C1CB",
+                  },
+                }}
+                variant="contained"
+                // onClick={handleSubmit}
+                type="submit"
+              >
+                Send Enquiry
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
+        </form>
         <Grid>
           <Grid mb={6} mt={6}>
             <iframe
