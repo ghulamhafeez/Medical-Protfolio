@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { supabase } from "./api/supabase";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export default function SecuredReferral() {
   const [open, setOpen] = useState(true);
