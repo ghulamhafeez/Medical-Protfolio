@@ -41,7 +41,7 @@ export default function SecuredReferral() {
     email: Yup.string().required("Email is required"),
     surName: Yup.string().required("Sur Name Number is required"),
     dayPhone: Yup.string().required("Day Phone is required"),
-    ddress: Yup.string().required("Address is required"),
+    address: Yup.string().required("Address is required"),
     streetAddress: Yup.string().required("Street Address is required"),
     city: Yup.string().required("city is required"),
     state: Yup.string().required("state is required"),
@@ -80,7 +80,9 @@ export default function SecuredReferral() {
       recordsFile: "",
     },
     validationSchema: schema,
+
     onSubmit: (values, { resetForm }) => {
+      console.log("called");
       const data = {
         firstName: values.firstName,
         surName: values.surName,
