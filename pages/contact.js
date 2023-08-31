@@ -25,7 +25,7 @@ export default function Contact() {
   const schema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string().required("Email is required"),
-    phone: Yup.string().required("Phone is required"),
+    phone: Yup.string().required("Phone Number is required"),
     enquiry: Yup.string().required("Enquiry is required"),
   });
 
