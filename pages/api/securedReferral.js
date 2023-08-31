@@ -23,12 +23,59 @@ export default function handler(req, res) {
     subject: `Hello World`,
 
     html: `
+    <table style="float:right">
+    <tr>
+      <th>First Name</th>
+      <th>Sur Name</th>
+      <th>Email</th>
+      <th>Day Phone</th>
+      <th>Address</th>
+      <th>Street Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th>Guardian Name</th>
+      <th>Relation Patient</th>
+      <th>Dentist Name</th>
+      <th>Dentist Phone</th>
+      <th>Notes</th>
+      <th>Records File</th>
+    </tr>
+    <tr>
+      <td>${data.firstName}</td>
+      <td>${data.surName}</td>
+      <td>${data.email}</td>
+      <td>${data.dayPhone}</td>
+      <td>${data.address}</td>
+      <td>${data.streetAddress}</td>
+      
+      <td>${data.city}</td>
+      <td>${data.state}</td>
+      <td>${data.zipCode}</td>
+      <td>${data.guardianName}</td>
+      <td>${data.relationPatient}</td>
+      <td>${data.dentistName}</td>
+      <td>${data.dentistPhone}</td>
+      <td>${data.notes}</td>
+      <td><img
+
+      src=${FIRST_PATH}${data.recordsFile}
+      alt="iamge"
+      width=${150}
+      height=${150}
+    />
+ </td>
+
+    </tr>
+    
+  </table>
+
     <div><strong>First Name:</strong> ${data.firstName}</div>
     <br/>  <div><strong>Sur Name:</strong> ${data.surName}</div>
     <br/>  <div><strong>Email:</strong> ${data.email}</div>
     <br/>  <div><strong>Day Phone:</strong> ${data.dayPhone}</div>
     <br/>  <div><strong>Address:</strong> ${data.address}</div>
-    <br/>  <div><strong>Atreet Address:</strong> ${data.streetAddress}</div>
+    <br/>  <div><strong>Street Address:</strong> ${data.streetAddress}</div>
     <br/>  <div><strong>City:</strong> ${data.city}</div>
     <br/>  <div><strong>State:</strong> ${data.state}</div>
     <br/>  <div><strong>Zip Code:</strong> ${data.zipCode}</div>
