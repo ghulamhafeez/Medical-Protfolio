@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
+import * as Yup from "yup";
 
 export default function Contact() {
   const [open, setOpen] = useState(true);
@@ -20,13 +21,23 @@ export default function Contact() {
       setOpen(false);
     }, 500);
   }, []);
-  const { handleBlur, handleChange, values, handleSubmit } = useFormik({
+
+  const schema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().required("Email is required"),
+    phone: Yup.string().required("Phone is required"),
+    enquiry: Yup.string().required("Enquiry is required"),
+  });
+
+  const { handleBlur, handleChange, values, handleSubmit, errors } = useFormik({
     initialValues: {
       name: "",
       email: "",
       phone: "",
       enquiry: "",
     },
+
+    validationSchema: schema,
     onSubmit: (values, { resetForm }) => {
       const data = {
         name: values.name,
@@ -170,6 +181,9 @@ export default function Contact() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
+            {errors.name ? (
+              <Typography sx={{ color: "red" }}>{errors.name}</Typography>
+            ) : null}
             <TextField
               id="outlined-basic"
               label="Email Address"
@@ -180,6 +194,9 @@ export default function Contact() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
+            {errors.email ? (
+              <Typography sx={{ color: "red" }}>{errors.email}</Typography>
+            ) : null}
             <TextField
               id="outlined-basic"
               label="Phone Number"
@@ -190,6 +207,9 @@ export default function Contact() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
+            {errors.phone ? (
+              <Typography sx={{ color: "red" }}>{errors.phone}</Typography>
+            ) : null}
             <TextField
               id="outlined-basic"
               label="Enquiry"
@@ -200,7 +220,9 @@ export default function Contact() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-
+            {errors.enquiry ? (
+              <Typography sx={{ color: "red" }}>{errors.enquiry}</Typography>
+            ) : null}
             <Grid>
               <Button
                 sx={{
