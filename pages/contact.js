@@ -10,6 +10,8 @@ import { supabase } from "./api/supabase";
 import * as Yup from "yup";
 
 export default function Contact() {
+  const [open, setOpen] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
