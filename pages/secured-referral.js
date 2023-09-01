@@ -55,7 +55,7 @@ export default function SecuredReferral() {
       recordsFile: "",
     },
     validationSchema: schema,
-    // validateOnChange: false,
+    validateOnChange: false,
     validateOnBlur: false,
 
     onSubmit: (values, { resetForm }) => {
