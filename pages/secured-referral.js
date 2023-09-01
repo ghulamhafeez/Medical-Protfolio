@@ -23,17 +23,10 @@ export default function SecuredReferral() {
     email: Yup.string().required("Email is required"),
     surName: Yup.string().required("Sur Name is required"),
     dayPhone: Yup.string().required("Day Phone is required"),
-    address: Yup.string().required("Address is required"),
-    streetAddress: Yup.string().required("Street Address is required"),
-    city: Yup.string().required("city is required"),
-    state: Yup.string().required("state is required"),
-    zipCode: Yup.string().required("zip Code is required"),
-    guardianName: Yup.string().required("Guardian Name is required"),
-    relationPatient: Yup.string().required("Relation Patient is required"),
+
     dentistName: Yup.string().required("Dentist Name is required"),
     dentistPhone: Yup.string().required("Dentist Phone is required"),
     notes: Yup.string().required("Notes is required"),
-    recordsFile: Yup.string().required("Records File is required"),
   });
 
   const {
@@ -248,8 +241,6 @@ export default function SecuredReferral() {
             value={values.address}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.address}
-            helperText={errors.address ?? ""}
           />
 
           <TextField
@@ -261,8 +252,6 @@ export default function SecuredReferral() {
             value={values.streetAddress}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.streetAddress}
-            helperText={errors.streetAddress ?? ""}
           />
 
           <TextField
@@ -274,8 +263,6 @@ export default function SecuredReferral() {
             value={values.city}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.city}
-            helperText={errors.city ?? ""}
           />
 
           <TextField
@@ -287,8 +274,6 @@ export default function SecuredReferral() {
             value={values.state}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.state}
-            helperText={errors.state ?? ""}
           />
 
           <TextField
@@ -300,8 +285,6 @@ export default function SecuredReferral() {
             value={values.zipCode}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.zipCode}
-            helperText={errors.zipCode ?? ""}
           />
 
           <TextField
@@ -313,8 +296,6 @@ export default function SecuredReferral() {
             value={values.guardianName}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.guardianName}
-            helperText={errors.guardianName ?? ""}
           />
 
           <TextField
@@ -326,8 +307,6 @@ export default function SecuredReferral() {
             value={values.relationPatient}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={errors.relationPatient}
-            helperText={errors.relationPatient ?? ""}
           />
 
           <Typography
@@ -386,11 +365,6 @@ export default function SecuredReferral() {
             value={""}
             onChange={(e) => handleFile(e)}
           />
-          {errors.recordsFile ? (
-            <Typography sx={{ color: "#cc0000", mr: 140, fontSize: 12 }}>
-              {errors.recordsFile}
-            </Typography>
-          ) : null}
 
           <Typography variant="body2" color={"grey"} textAlign={"left"}>
             We only accept .pdf &amp; .doc files up to a size of 2mb. If you
