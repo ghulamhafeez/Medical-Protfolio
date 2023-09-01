@@ -12,24 +12,6 @@ import * as Yup from "yup";
 export default function SecuredReferral() {
   const [open, setOpen] = useState(true);
 
-  // const [securedData, setSecuredData] = useState({
-  //   firstName: "",
-  //   surName: "",
-  //   email: "",
-  //   dayPhone: "",
-  //   address: "",
-  //   streetAddress: "",
-  //   city: "",
-  //   state: "",
-  //   zipCode: "",
-  //   guardianName: "",
-  //   relationPatient: "",
-  //   dentistName: "",
-  //   dentistPhone: "",
-  //   notes: "",
-  //   recordsFile: "",
-  // });
-
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
@@ -39,7 +21,7 @@ export default function SecuredReferral() {
   const schema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required"),
     email: Yup.string().required("Email is required"),
-    surName: Yup.string().required("Sur Name Number is required"),
+    surName: Yup.string().required("Sur Name is required"),
     dayPhone: Yup.string().required("Day Phone is required"),
     address: Yup.string().required("Address is required"),
     streetAddress: Yup.string().required("Street Address is required"),
@@ -80,6 +62,7 @@ export default function SecuredReferral() {
       recordsFile: "",
     },
     validationSchema: schema,
+    validateOnChange: false,
 
     onSubmit: (values, { resetForm }) => {
       console.log("called");
@@ -133,37 +116,6 @@ export default function SecuredReferral() {
     },
   });
 
-  // const handleSubmit = () => {
-  //   const data = {
-  //     firstName: securedData?.firstName,
-  //     surName: securedData?.surName,
-  //     email: securedData?.email,
-  //     dayPhone: securedData?.dayPhone,
-  //     address: securedData?.address,
-  //     streetAddress: securedData?.streetAddress,
-  //     city: securedData?.city,
-  //     state: securedData?.state,
-  //     zipCode: securedData?.zipCode,
-  //     guardianName: securedData?.guardianName,
-  //     relationPatient: securedData?.relationPatient,
-  //     dentistName: securedData?.dentistName,
-  //     dentistPhone: securedData?.dentistPhone,
-  //     notes: securedData?.notes,
-  //     recordsFile: securedData?.recordsFile,
-  //   };
-  //   fetch("/api/securedReferral", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => console.log("res", res))
-  //     .catch((err) => console.log("err", err));
-  //   supabase
-  //     .from("secured_referral")
-  //     .insert(data)
-  //     .then((response) => {
-  //       console.log("responseS", response);
-  //     });
-  // };
   const handleFile = (e) => {
     const filedata = e?.target?.files[0];
 
@@ -243,10 +195,10 @@ export default function SecuredReferral() {
             value={values.firstName}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.firstName}
+            helperText={errors.firstName ?? ""}
           />
-          {errors.firstName ? (
-            <Typography sx={{ color: "red" }}>{errors.firstName}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Sur Name"
@@ -256,10 +208,10 @@ export default function SecuredReferral() {
             value={values.surName}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.surName}
+            helperText={errors.surName ?? ""}
           />
-          {errors.surName ? (
-            <Typography sx={{ color: "red" }}>{errors.surName}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Email"
@@ -269,10 +221,10 @@ export default function SecuredReferral() {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.email}
+            helperText={errors.email ?? ""}
           />
-          {errors.email ? (
-            <Typography sx={{ color: "red" }}>{errors.email}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Daytime Telephone Number"
@@ -282,10 +234,10 @@ export default function SecuredReferral() {
             value={values.dayPhone}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.dayPhone}
+            helperText={errors.dayPhone ?? ""}
           />
-          {errors.dayPhone ? (
-            <Typography sx={{ color: "red" }}>{errors.dayPhone}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Address"
@@ -295,10 +247,10 @@ export default function SecuredReferral() {
             value={values.address}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.address}
+            helperText={errors.address ?? ""}
           />
-          {errors.address ? (
-            <Typography sx={{ color: "red" }}>{errors.address}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Street Address"
@@ -308,12 +260,10 @@ export default function SecuredReferral() {
             value={values.streetAddress}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.streetAddress}
+            helperText={errors.streetAddress ?? ""}
           />
-          {errors.streetAddress ? (
-            <Typography sx={{ color: "red" }}>
-              {errors.streetAddress}
-            </Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="City"
@@ -323,10 +273,10 @@ export default function SecuredReferral() {
             value={values.city}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.city}
+            helperText={errors.city ?? ""}
           />
-          {errors.city ? (
-            <Typography sx={{ color: "red" }}>{errors.city}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="State/Province/Region"
@@ -336,10 +286,10 @@ export default function SecuredReferral() {
             value={values.state}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.state}
+            helperText={errors.state ?? ""}
           />
-          {errors.state ? (
-            <Typography sx={{ color: "red" }}>{errors.state}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Postal/Zip Code"
@@ -349,10 +299,10 @@ export default function SecuredReferral() {
             value={values.zipCode}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.zipCode}
+            helperText={errors.zipCode ?? ""}
           />
-          {errors.zipCode ? (
-            <Typography sx={{ color: "red" }}>{errors.zipCode}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Name of Parent or Guardian If under 16 years of age"
@@ -362,10 +312,10 @@ export default function SecuredReferral() {
             value={values.guardianName}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.guardianName}
+            helperText={errors.guardianName ?? ""}
           />
-          {errors.guardianName ? (
-            <Typography sx={{ color: "red" }}>{errors.guardianName}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Relationship to Patient If a parent of guardian"
@@ -375,12 +325,10 @@ export default function SecuredReferral() {
             value={values.relationPatient}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.relationPatient}
+            helperText={errors.relationPatient ?? ""}
           />
-          {errors.relationPatient ? (
-            <Typography sx={{ color: "red" }}>
-              {errors.relationPatient}
-            </Typography>
-          ) : null}
+
           <Typography
             variant="h3"
             color={"#333333"}
@@ -398,10 +346,10 @@ export default function SecuredReferral() {
             value={values.dentistName}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.dentistName}
+            helperText={errors.dentistName ?? ""}
           />
-          {errors.dentistName ? (
-            <Typography sx={{ color: "red" }}>{errors.dentistName}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Dentist`s Telephone Number"
@@ -411,10 +359,10 @@ export default function SecuredReferral() {
             value={values.dentistPhone}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.dentistPhone}
+            helperText={errors.dentistPhone ?? ""}
           />
-          {errors.dentistPhone ? (
-            <Typography sx={{ color: "red" }}>{errors.dentistPhone}</Typography>
-          ) : null}
+
           <TextField
             id="outlined-basic"
             label="Notes/Comments/Resons for Referal"
@@ -424,10 +372,10 @@ export default function SecuredReferral() {
             value={values.notes}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={errors.notes}
+            helperText={errors.notes ?? ""}
           />
-          {errors.notes ? (
-            <Typography sx={{ color: "red" }}>{errors.notes}</Typography>
-          ) : null}
+
           <Typography variant="body1" textAlign={"left"}>
             Upload Records
           </Typography>
@@ -438,7 +386,9 @@ export default function SecuredReferral() {
             onChange={(e) => handleFile(e)}
           />
           {errors.recordsFile ? (
-            <Typography sx={{ color: "red" }}>{errors.recordsFile}</Typography>
+            <Typography sx={{ color: "#cc0000", mr: 80, fontSize: 12 }}>
+              {errors.recordsFile}
+            </Typography>
           ) : null}
 
           <Typography variant="body2" color={"grey"} textAlign={"left"}>
@@ -446,7 +396,6 @@ export default function SecuredReferral() {
             need to send us more, please contact us for an alternative method
           </Typography>
           <Button
-            // onClick={() => handleSubmit()}
             sx={{
               backgroundColor: "#AFB5B9",
               color: "white",

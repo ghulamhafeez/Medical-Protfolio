@@ -10,12 +10,6 @@ import { supabase } from "./api/supabase";
 import * as Yup from "yup";
 
 export default function Contact() {
-  const [open, setOpen] = useState(true);
-  // const [name, setName] = useState();
-  // const [email, setEmail] = useState();
-  // const [phone, setPhone] = useState();
-  // const [enquiry, setEnquiry] = useState();
-
   useEffect(() => {
     setTimeout(() => {
       setOpen(false);
@@ -38,6 +32,7 @@ export default function Contact() {
     },
 
     validationSchema: schema,
+    validateOnChange: false,
     onSubmit: (values, { resetForm }) => {
       const data = {
         name: values.name,
@@ -61,31 +56,6 @@ export default function Contact() {
       resetForm({ name: "", email: "", phone: "", enquiry: "" });
     },
   });
-  // const handleSubmit = () => {
-  //   const data = {
-  //     name: name,
-  //     phone: phone,
-  //     email: email,
-  //     enquiry: enquiry,
-  //   };
-  //   fetch("/api/contactUs", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => console.log("res", res))
-  //     .catch((err) => console.log("err", err));
-
-  //   supabase
-  //     .from("contact")
-  //     .insert(data)
-  //     .then((response) => {
-  //       console.log("response", "response");
-  //     });
-  //   setName("");
-  //   setEmail("");
-  //   setPhone("");
-  //   setEnquiry("");
-  // };
 
   return (
     <Grid display={"flex"} direction={"column"} container>
@@ -180,10 +150,9 @@ export default function Contact() {
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
+              error={errors.name}
+              helperText={errors.name ?? ""}
             />
-            {errors.name ? (
-              <Typography sx={{ color: "red" }}>{errors.name}</Typography>
-            ) : null}
             <TextField
               id="outlined-basic"
               label="Email Address"
@@ -193,10 +162,9 @@ export default function Contact() {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
+              error={errors.email}
+              helperText={errors.email ?? ""}
             />
-            {errors.email ? (
-              <Typography sx={{ color: "red" }}>{errors.email}</Typography>
-            ) : null}
             <TextField
               id="outlined-basic"
               label="Phone Number"
@@ -206,10 +174,9 @@ export default function Contact() {
               value={values.phone}
               onChange={handleChange}
               onBlur={handleBlur}
+              error={errors.phone}
+              helperText={errors.phone ?? ""}
             />
-            {errors.phone ? (
-              <Typography sx={{ color: "red" }}>{errors.phone}</Typography>
-            ) : null}
             <TextField
               id="outlined-basic"
               label="Enquiry"
@@ -219,10 +186,9 @@ export default function Contact() {
               value={values.enquiry}
               onChange={handleChange}
               onBlur={handleBlur}
+              error={errors.enquiry}
+              helperText={errors.enquiry ?? ""}
             />
-            {errors.enquiry ? (
-              <Typography sx={{ color: "red" }}>{errors.enquiry}</Typography>
-            ) : null}
             <Grid>
               <Button
                 sx={{
@@ -234,7 +200,6 @@ export default function Contact() {
                   },
                 }}
                 variant="contained"
-                // onClick={handleSubmit}
                 type="submit"
               >
                 Send Enquiry
