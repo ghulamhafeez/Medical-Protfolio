@@ -34,7 +34,8 @@ export default function Contact() {
     },
 
     validationSchema: schema,
-    validateOnChange: false,
+    validateOnBlur: false,
+
     onSubmit: (values, { resetForm }) => {
       const data = {
         name: values.name,
