@@ -62,7 +62,8 @@ export default function SecuredReferral() {
       recordsFile: "",
     },
     validationSchema: schema,
-    validateOnChange: false,
+    // validateOnChange: false,
+    validateOnBlur: false,
 
     onSubmit: (values, { resetForm }) => {
       console.log("called");
@@ -386,7 +387,7 @@ export default function SecuredReferral() {
             onChange={(e) => handleFile(e)}
           />
           {errors.recordsFile ? (
-            <Typography sx={{ color: "#cc0000", mr: 80, fontSize: 12 }}>
+            <Typography sx={{ color: "#cc0000", mr: 140, fontSize: 12 }}>
               {errors.recordsFile}
             </Typography>
           ) : null}
