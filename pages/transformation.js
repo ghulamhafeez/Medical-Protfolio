@@ -14,12 +14,11 @@ export const getServerSideProps = async () => {
     .select()
     .order("id", { ascending: false });
 
-  const transformationData = res.data;
+  const transformation = res.data;
 
-  return { props: { transformationData } };
+  return { props: { transformation } };
 };
-export default function Transformation({ transformationData }) {
-  const [transformation, setTransformation] = useState(transformationData);
+export default function Transformation({ transformation }) {
   const [open, setOpen] = useState(true);
 
   useEffect(() => {

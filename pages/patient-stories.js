@@ -21,7 +21,6 @@ export const getServerSideProps = async () => {
 
 export default function PatientStories({ stories }) {
   const [open, setOpen] = useState(true);
-  const [patientStories, setPatientStories] = useState(stories);
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,7 +61,7 @@ export default function PatientStories({ stories }) {
           Dr Haris
         </Typography>
       </Backdrop>
-      {patientStories?.map((x) => {
+      {stories?.map((x) => {
         const text = x.items.find((x) => x.type === "text");
         const file = x.items.find((x) => x.type === "file");
         return (

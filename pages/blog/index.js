@@ -27,15 +27,8 @@ export const getServerSideProps = async () => {
   return { props: { blogs } };
 };
 
-export default function Blog(props) {
-  console.log("props", props);
-
+export default function Blog({ blogs }) {
   const [open, setOpen] = useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [blogs, setBlogs] = React.useState(props.blogs);
-
-  const OpenPoper = Boolean(anchorEl);
-  const id = OpenPoper ? "simple-popper" : undefined;
 
   useEffect(() => {
     setTimeout(() => {

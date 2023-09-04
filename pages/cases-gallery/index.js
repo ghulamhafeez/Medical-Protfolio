@@ -20,9 +20,8 @@ export const getServerSideProps = async () => {
   return { props: { cases } };
 };
 
-export default function CasesGallery(props) {
+export default function CasesGallery({ cases }) {
   const [open, setOpen] = useState(true);
-  const [casesGallery, setCasesGallery] = useState(props.cases);
 
   useEffect(() => {
     setTimeout(() => {
