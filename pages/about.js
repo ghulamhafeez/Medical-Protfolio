@@ -7,10 +7,21 @@ import { useEffect, useState } from "react";
 import { FIRST_PATH } from "../constants/Constant";
 import { supabase } from "./api/supabase";
 
-export default function About() {
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("authentication")
+    .select()
+    .eq("email", "drharis@test.com")
+    .single();
+
+  const authentication = res.data;
+  return { props: { authentication } };
+};
+
+export default function About({ authentication }) {
   const [open, setOpen] = useState(true);
-  const [bio, setBio] = useState("");
-  const [avatarImg, setAvatarImg] = useState("");
+  const [bio, setBio] = useState(authentication?.bio);
+  const [avatarImg, setAvatarImg] = useState(authentication?.avatarImg);
 
   useEffect(() => {
     getAboutData();

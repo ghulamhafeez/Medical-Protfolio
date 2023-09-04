@@ -7,27 +7,28 @@ import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
 import { FIRST_PATH } from "../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
-export default function PatientStories() {
+
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("patient_stories")
+    .select()
+    .order("id", { ascending: false });
+
+  const stories = res.data;
+
+  return { props: { stories } };
+};
+
+export default function PatientStories({ stories }) {
   const [open, setOpen] = useState(true);
-  const [patientStories, setPatientStories] = useState();
+  const [patientStories, setPatientStories] = useState(stories);
 
   useEffect(() => {
-    getPatientStories();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
-  const getPatientStories = () => {
-    supabase
-      .from("patient_stories")
-      .select()
-      .order("id", { ascending: false })
-      .then((response) => {
-        setPatientStories(response?.data);
-        console.log("response", response.data);
-      });
-  };
   return (
     <Grid>
       <Grid

@@ -8,27 +8,27 @@ import Typography from "@mui/material/Typography";
 import { supabase } from "../api/supabase";
 import { FIRST_PATH } from "../../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
-export default function CasesGallery() {
+
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("cases_gallery")
+    .select()
+    .order("id", { ascending: false });
+
+  const cases = res.data;
+
+  return { props: { cases } };
+};
+
+export default function CasesGallery(props) {
   const [open, setOpen] = useState(true);
-  const [casesGallery, setCasesGallery] = useState();
+  const [casesGallery, setCasesGallery] = useState(props.cases);
 
   useEffect(() => {
-    getCasesGallery();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
-
-  const getCasesGallery = () => {
-    supabase
-      .from("cases_gallery")
-      .select()
-      .order("id", { ascending: false })
-      .then((response) => {
-        console.log("data", response.data);
-        setCasesGallery(response?.data);
-      });
-  };
 
   return (
     <Grid>
@@ -70,15 +70,16 @@ export default function CasesGallery() {
           return (
             <Grid
               key={x}
+              container
               display={"flex"}
               direction={"column"}
               mb={4}
               mt={5}
-              px={{ xs: 2, sm: 6, md: 8, lg: 36, xl: 42 }}
+              px={{ xs: 2, sm: 6, md: 8, lg: 16, xl: 20 }}
             >
-              <Grid mt={2} direction={"column"} container>
+              <Grid mt={2} direction={"column"}>
                 <Typography variant="h6">Before</Typography>
-                <Grid display={"flex"} xs={4} gap={3}>
+                <Grid display={"flex"} gap={2}>
                   {x.beforeFile.map((x) => {
                     return (
                       <img
@@ -86,15 +87,16 @@ export default function CasesGallery() {
                         loading="lazy"
                         alt="iamge"
                         src={`${FIRST_PATH}${x}`}
-                        width={320}
+                        width={"100%"}
+                        height={200}
                       />
                     );
                   })}
                 </Grid>
               </Grid>
-              <Grid mt={2} container direction={"column"}>
+              <Grid mt={2} direction={"column"}>
                 <Typography variant="h6">After</Typography>
-                <Grid xs={4} display={"flex"} gap={3}>
+                <Grid display={"flex"} gap={2}>
                   {x.afterFile.map((x) => {
                     return (
                       <img
@@ -102,14 +104,13 @@ export default function CasesGallery() {
                         loading="lazy"
                         alt="iamge"
                         src={`${FIRST_PATH}${x}`}
-                        width={320}
-                        height={220}
+                        width={"100%"}
+                        height={200}
                       />
                     );
                   })}
                 </Grid>
               </Grid>
-
               {/* <Grid container key={x} spacing={4}>
                 <Grid item xs={6} sm={4} md={4} lg={4}>
                   <img loading="lazy" alt="iamge" src={""} width={"100%"} />

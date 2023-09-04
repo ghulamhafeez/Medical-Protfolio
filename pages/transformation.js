@@ -8,29 +8,26 @@ import CardHeader from "@mui/material/CardHeader";
 
 import { FIRST_PATH } from "../constants/Constant";
 /* eslint-disable @next/next/no-img-element */
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("transformation")
+    .select()
+    .order("id", { ascending: false });
 
-export default function Transformation() {
-  const [transformation, setTransformation] = useState();
+  const transformationData = res.data;
+
+  return { props: { transformationData } };
+};
+export default function Transformation({ transformationData }) {
+  const [transformation, setTransformation] = useState(transformationData);
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
-    getTransformation();
-
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
-  const getTransformation = () => {
-    supabase
-      .from("transformation")
-      .select()
-      .order("id", { ascending: false })
-      .then((response) => {
-        console.log("asdresponse", response?.data);
-        setTransformation(response?.data);
-      });
-  };
   return (
     <Grid px={{ xl: 30, lg: 20, md: 15, sm: 6 }}>
       {transformation?.map((x) => {

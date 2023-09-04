@@ -8,27 +8,26 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
 
-export default function TreatmentOptions() {
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("treatment_option")
+    .select()
+    .order("id", { ascending: false });
+
+  const treatments = res.data;
+
+  return { props: { treatments } };
+};
+
+export default function TreatmentOptions(props) {
   const [open, setOpen] = useState(true);
-  const [treatmentOption, setTreatmentOption] = useState();
+  const [treatmentOption, setTreatmentOption] = useState(props.treatments);
 
   useEffect(() => {
-    getTreatmentOption();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
-
-  const getTreatmentOption = () => {
-    supabase
-      .from("treatment_option")
-      .select()
-      .order("id", { ascending: false })
-      .then((response) => {
-        console.log("asdresponse", response?.data);
-        setTreatmentOption(response?.data);
-      });
-  };
 
   return (
     <Grid>

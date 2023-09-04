@@ -15,6 +15,18 @@ import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
 // import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("blog")
+    .select()
+    .order("id", { ascending: false });
+
+  console.log("res", res.data);
+  const blogs = res.data;
+
+  return { props: { blogs } };
+};
+
 export default function Blog(props) {
   console.log("props", props);
 
@@ -22,30 +34,15 @@ export default function Blog(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [blogs, setBlogs] = React.useState(props.blogs);
 
-  // const handleClick = (event) => {
-  //   setAnchorEl(anchorEl ? null : event.currentTarget);
-  // };
-
   const OpenPoper = Boolean(anchorEl);
   const id = OpenPoper ? "simple-popper" : undefined;
 
   useEffect(() => {
-    // getBlog();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
-  // const getBlog = () => {
-  //   supabase
-  //     .from("blog")
-  //     .select()
-  //     .order("id", { ascending: false })
-  //     .then((response) => {
-  //       console.log("data", response);
-  //       setBlogs(response?.data);
-  //     });
-  // };
   return (
     <Grid>
       <Grid
@@ -132,14 +129,3 @@ export default function Blog(props) {
     </Grid>
   );
 }
-export const getServerSideProps = async () => {
-  const res = await supabase
-    .from("blog")
-    .select()
-    .order("id", { ascending: false });
-
-  console.log("res", res.data);
-  const blogs = res.data;
-
-  return { props: { blogs } };
-};
