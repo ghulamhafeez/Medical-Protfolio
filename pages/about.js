@@ -80,7 +80,7 @@ export default function About() {
         flexWrap={"wrap"}
         direction={"row"}
         px={{ xs: 3, sm: 6, md: 15, lg: 24, xl: 30 }}
-        spacing={4}
+        spacing={6}
         mb={4}
         mt={2}
       >
