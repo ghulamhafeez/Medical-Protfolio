@@ -8,7 +8,7 @@ export default function CasesGalleryTabs() {
     <Grid
       display={"flex"}
       flexWrap={"wrap"}
-      px={{ xs: 1, sm: 10, md: 11, lg: 37, xl: 45 }}
+      px={{ xs: 7, sm: 12, md: 11, lg: 37, xl: 45 }}
       gap={2}
     >
       {CasesGalleryData?.map((x) => {

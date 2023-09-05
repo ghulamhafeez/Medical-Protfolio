@@ -64,60 +64,57 @@ export default function CasesGallery({ cases }) {
       </Backdrop>
       <CasesGalleryTabs></CasesGalleryTabs>
 
-      <Grid>
-        {casesGallery?.map((x) => {
+      <Grid px={{ xs: 1, sm: 6, md: 14, lg: 20, xl: 26 }} mt={2}>
+        {cases?.map((x) => {
           return (
             <Grid
               key={x}
               container
-              display={"flex"}
-              direction={"column"}
-              mb={4}
-              mt={5}
-              px={{ xs: 2, sm: 6, md: 8, lg: 16, xl: 20 }}
+              spacing={{ xl: 24, lg: 20, md: 12, sm: 6, xs: 1 }}
+              padding={2}
             >
-              <Grid mt={2} direction={"column"}>
-                <Typography variant="h6">Before</Typography>
-                <Grid display={"flex"} gap={2}>
+              <Grid item xs={6} display={"flex"} direction={"column"}>
+                <Typography variant="body1" ml={2}>
+                  Before
+                </Typography>
+
+                <Grid mt={2}>
                   {x.beforeFile.map((x) => {
                     return (
-                      <img
-                        key={x}
-                        loading="lazy"
-                        alt="iamge"
-                        src={`${FIRST_PATH}${x}`}
-                        width={"100%"}
-                        height={200}
-                      />
+                      <Grid key={x}>
+                        <img
+                          width={"100%"}
+                          height={270}
+                          object-fit="cover"
+                          src={`${FIRST_PATH}${x}`}
+                          multiple
+                        ></img>
+                      </Grid>
                     );
                   })}
                 </Grid>
               </Grid>
-              <Grid mt={2} direction={"column"}>
-                <Typography variant="h6">After</Typography>
-                <Grid display={"flex"} gap={2}>
+              <Grid item xs={6} display={"flex"} direction={"column"}>
+                <Typography variant="body1" ml={2}>
+                  After
+                </Typography>
+
+                <Grid mt={2}>
                   {x.afterFile.map((x) => {
                     return (
-                      <img
-                        key={x}
-                        loading="lazy"
-                        alt="iamge"
-                        src={`${FIRST_PATH}${x}`}
-                        width={"100%"}
-                        height={200}
-                      />
+                      <Grid key={x}>
+                        <img
+                          width={"100%"}
+                          height={270}
+                          object-fit="cover"
+                          src={`${FIRST_PATH}${x}`}
+                          multiple
+                        ></img>
+                      </Grid>
                     );
                   })}
                 </Grid>
               </Grid>
-              {/* <Grid container key={x} spacing={4}>
-                <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" alt="iamge" src={""} width={"100%"} />
-                </Grid>
-                <Grid item xs={6} sm={4} md={4} lg={4}>
-                  <img loading="lazy" alt="iamge" src={x.src3} width={"100%"} />
-                </Grid>
-              </Grid> */}
             </Grid>
           );
         })}
