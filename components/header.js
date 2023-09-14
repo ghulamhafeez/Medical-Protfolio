@@ -26,23 +26,6 @@ export default function Header() {
         justifyContent={"space-between"}
         mb={2}
       >
-        <Grid
-          display={{ xs: "none", sm: "block" }}
-          mt={2}
-          item
-          xs={12}
-          sm={4}
-          px={{ xs: 8, sm: 10, md: 15, lg: 22, xl: 26 }}
-        >
-          <img
-            loading="lazy"
-            src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo2.jpg"
-            alt="dr ektor grammatopoulos orthodontics logo2"
-            width={"100%"}
-            height={100}
-          ></img>
-        </Grid>
-
         <Grid display={"flex"} direction={"column"} item xs={12} sm={4}>
           <Grid bgcolor={"#AFB5B9"} display={{ xs: "block", sm: "none" }}>
             <MenuIcon

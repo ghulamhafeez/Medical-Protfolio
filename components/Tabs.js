@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TabsData } from "../constants/Constant";
 import Typography from "@mui/material/Typography";
 export default function Tabs() {
+  console.log("TabsData", TabsData);
   return (
     <Grid
       display={{ xs: "none", sm: "flex" }}
@@ -16,12 +17,13 @@ export default function Tabs() {
     >
       {TabsData?.map((x) => {
         return (
-          <Link href={x.path} key={x}>
+          <Link href={x.path} key={x} color="black">
             <Typography
               variant="h6"
               gutterBottom
               ml={2}
               fontSize={{ sm: "15px", md: "17px", lg: "20px" }}
+              color="black"
             >
               {x.name}
             </Typography>{" "}
