@@ -29,7 +29,6 @@ export default function Header() {
         <Grid
           display={{ xs: "none", sm: "block" }}
           mt={2}
-          // text-align={{ xs: "left" }}
           item
           xs={12}
           sm={4}
@@ -60,18 +59,14 @@ export default function Header() {
           <Grid
             display={"flex"}
             justifyContent={"center"}
-            // ml={{ xs: 16, sm: 14, md: 40, lg: 70, xl: 78 }}
             px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
-            // mr={-16}
             mt={3}
-            // mb={1}
-            // px={10}
           >
             <img
-              loading="lazy"
-              src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/dr-ektor.png"
-              alt="dr ektor grammatopoulos orthodontics logo1"
               width={"100%"}
+              height={100}
+              alt={"Image"}
+              src={"/assets/icon/applogo.png"}
             ></img>
           </Grid>
         </Grid>

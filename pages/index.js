@@ -50,15 +50,6 @@ export default function Home() {
             return (
               <SwiperSlide key={x}>
                 <img src={x?.url} alt="iamge" width="100%" />
-                {/* <Typography
-                      sx={{
-                        fontSize: 13,
-                        textAlign: "center",
-                        color: "White",
-                      }}
-                    >
-                      {x?.text}
-                    </Typography> */}
               </SwiperSlide>
             );
           })}
@@ -67,7 +58,7 @@ export default function Home() {
 
       <Grid container direction={"row"} spacing={3} pt={3}>
         <Grid item xs={12} sm={6}>
-          <Link href="https://www.ektorgrammatopoulos.com/orthodontics-treatment-for-adult/">
+          <Link href="/">
             <img
               loading="lazy"
               src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb1-e1549990722296.jpg"
@@ -80,7 +71,7 @@ export default function Home() {
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <Link href="https://www.ektorgrammatopoulos.com/orthodontics-treatment-for-children/">
+          <Link href="/">
             <img
               loading="lazy"
               src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb2-e1549990637829.jpg"
