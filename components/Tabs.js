@@ -14,7 +14,6 @@ export default function Tabs() {
       px={{ sm: 2, md: 5, lg: 22, xl: 26 }}
       bgcolor={"white"}
       visibility={{}}
-      sx={{ "&>a": { textDecoration: "none" } }}
     >
       {TabsData?.map((x) => {
         return (
