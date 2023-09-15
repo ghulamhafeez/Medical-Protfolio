@@ -14,15 +14,17 @@ export default function Tabs() {
       px={{ sm: 2, md: 5, lg: 22, xl: 26 }}
       bgcolor={"white"}
       visibility={{}}
+      sx={{ "&>a": { textDecoration: "none" } }}
     >
       {TabsData?.map((x) => {
         return (
-          <Link href={x.path} key={x} color="black">
+          <Link href={x.path} key={x}>
             <Typography
               variant="h6"
               gutterBottom
               ml={2}
               fontSize={{ sm: "15px", md: "17px", lg: "20px" }}
+              sx={{ fontWeight: 500 }}
               color="black"
             >
               {x.name}
