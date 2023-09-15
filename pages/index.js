@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { Navigation } from "swiper";
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, Box } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -60,29 +60,81 @@ export default function Home() {
       <Grid container direction={"row"} spacing={3} pt={3}>
         <Grid item xs={12} sm={6}>
           <Link href="/">
-            <img
-              loading="lazy"
-              src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb1-e1549990722296.jpg"
-              alt="image"
-              width={"100%"}
-            />
-
+            <Grid
+              sx={{
+                position: "relative",
+                "&:hover": {
+                  "&::after": {
+                    transform: "scale(0.9)",
+                    background: "rgba(0,0,0,0.4)",
+                  },
+                },
+                "&::after": {
+                  position: "absolute",
+                  content: "''",
+                  top: 0,
+                  left: 0,
+                  background: "transparent",
+                  width: "100%",
+                  height: "100%",
+                  transition: "all 0.5s",
+                  transform: "scale(1)",
+                },
+              }}
+            >
+              <img
+                loading="lazy"
+                src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb1-e1549990722296.jpg"
+                alt="image"
+                width={"100%"}
+              />
+            </Grid>
             <h3>For Adults</h3>
           </Link>
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} position={"relative"}>
           <Link href="/">
-            <img
-              loading="lazy"
-              src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb2-e1549990637829.jpg"
-              alt="image"
-              width={"100%"}
-            />
-
-            <h3> For Children</h3>
+            <Grid
+              sx={{
+                position: "relative",
+                "&:hover": {
+                  "&::after": {
+                    transform: "scale(0.9)",
+                    background: "rgba(0,0,0,0.4)",
+                  },
+                },
+                "&::after": {
+                  position: "absolute",
+                  content: "''",
+                  top: 0,
+                  left: 0,
+                  background: "transparent",
+                  width: "100%",
+                  height: "100%",
+                  transition: "all 0.5s",
+                  transform: "scale(1)",
+                },
+              }}
+            >
+              <img
+                loading="lazy"
+                src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/detier-thumb2-e1549990637829.jpg"
+                alt="image"
+                width={"100%"}
+              />
+            </Grid>
+            <h3>For Children</h3>
           </Link>
         </Grid>
+        {/* <Box
+          sx={{
+            position: "absolute",
+            background: "red",
+            width: "500px",
+            height: 500,
+          }}
+        ></Box> */}
       </Grid>
 
       <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
