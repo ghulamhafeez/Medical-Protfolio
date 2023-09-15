@@ -152,13 +152,14 @@ export default function SecuredReferral() {
         }}
         open={open}
       >
-        <Typography
-          variant="h1"
-          color={"white"}
-          fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "50px" }}
-        >
-          Dr Haris
-        </Typography>
+        <Grid>
+          <img
+            width={"100%"}
+            height={100}
+            alt={"Image"}
+            src={"/assets/icon/applogo.png"}
+          ></img>
+        </Grid>
       </Backdrop>
       <form onSubmit={handleSubmit}>
         <Grid

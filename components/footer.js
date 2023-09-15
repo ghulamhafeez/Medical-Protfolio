@@ -16,13 +16,6 @@ export const Footer = () => {
           px={{ xs: 8, sm: 3, md: 8, lg: 10, xl: 14 }}
           mb={2}
         >
-          {/* <img
-            loading="lazy"
-            src="https://www.ektorgrammatopoulos.com/wp-content/uploads/2018/12/dr-ektor-grammatopoulos-orthodontics-logo3.jpg"
-            alt="dr ektor grammatopoulos orthodontics"
-            height={"50%"}
-            width={"60%"}
-          /> */}
           <img
             width={"100%"}
             height={100}
