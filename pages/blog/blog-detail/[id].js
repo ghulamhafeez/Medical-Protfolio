@@ -3,7 +3,6 @@ import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 import { supabase } from "../../api/supabase";
-import { Field } from "../../../components/Field";
 import { FIRST_PATH } from "../../../constants/Constant";
 export default function BlogDetail() {
   const [blogs, setBlogs] = React.useState();
@@ -15,9 +14,6 @@ export default function BlogDetail() {
     if (id) {
       getBlog();
     }
-    // setTimeout(() => {
-    //   setOpen(false);
-    // }, 500);
   }, [id]);
 
   const getBlog = () => {

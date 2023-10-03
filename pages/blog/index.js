@@ -1,19 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../../styles/Home.module.css";
+
 import Link from "next/link";
-import AddIcon from "@mui/icons-material/Add";
-import TextField from "@mui/material/TextField";
-import Card from "@mui/material/Card";
 import React from "react";
 import { FIRST_PATH } from "../../constants/Constant";
-import { Field } from "../../components/Field";
 import { supabase } from "../api/supabase";
 import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
-// import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
 export const getServerSideProps = async () => {
   const res = await supabase
@@ -105,13 +100,12 @@ export default function Blog({ blogs }) {
                     borderRadius: 0,
                     backgroundColor: "#AFB5B9",
                     color: "white",
-                    // width: "100%",
+
                     ":hover": {
                       backgroundColor: "#89C1CB",
                     },
                   }}
                   variant="contained"
-                  // onClick={}
                 >
                   read more
                 </Button>

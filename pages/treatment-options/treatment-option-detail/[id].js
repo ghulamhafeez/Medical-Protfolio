@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 import { supabase } from "../../api/supabase";
 import { Field } from "../../../components/Field";
-import { FIRST_PATH } from "../../../constants/Constant";
+
 export default function TreatmentOptionDetail() {
   const [treatmentOption, setTreatmentOption] = React.useState();
 
@@ -15,9 +15,6 @@ export default function TreatmentOptionDetail() {
     if (id) {
       getTreatmentOption();
     }
-    // setTimeout(() => {
-    //   setOpen(false);
-    // }, 500);
   }, [id]);
 
   const getTreatmentOption = () => {

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Backdrop from "@mui/material/Backdrop";
@@ -101,7 +100,6 @@ export default function About({ authentication }) {
             loading="lazy"
             src={`${FIRST_PATH}${avatarImg}`}
             width={"100%"}
-            // max-width="360px"
             height={"320px"}
             alt={"Thumbnail"}
           ></img>

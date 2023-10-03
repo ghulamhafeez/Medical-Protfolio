@@ -1,6 +1,4 @@
-import { FacebookProvider, CustomChat } from "react-facebook";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
@@ -16,16 +14,8 @@ export default function ChatMessage() {
   const handlePopoverOpen = (event) => {
     setIsOpen(event.currentTarget);
   };
-  // const handleOpen = () => {
-  //   setIsOpen(true);
-  // };
-  // const handleClose = () => {
-  //   setIsOpen(false);
-  // };
+
   return (
-    // <FacebookProvider appId="1035059091188504" chatSupport>
-    //   <CustomChat pageId="105822544169742" minimized={true} />
-    // </FacebookProvider>
     <Grid>
       <Grid>
         <Popover
@@ -107,7 +97,6 @@ export default function ChatMessage() {
             }}
             onClick={handlePopoverOpen}
           >
-            {/* <AddIcon /> */}
             <ChatIcon sx={{ color: "white" }} />
           </Fab>
         )}
