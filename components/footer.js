@@ -13,12 +13,12 @@ export const Footer = () => {
           item
           xs={12}
           sm={4}
-          px={{ xs: 8, sm: 3, md: 8, lg: 10, xl: 14 }}
+          px={{ xs: 5, sm: 0, md: 8, lg: 10, xl: 14 }}
           mb={2}
         >
           <img
-            width={"100%"}
-            height={100}
+            height={80}
+            width={280}
             alt={"Image"}
             src={"/assets/icon/applogo.png"}
           ></img>

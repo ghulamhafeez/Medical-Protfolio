@@ -36,7 +36,6 @@ export default function Transformation({ transformation }) {
         textAlign={"center"}
         pt={12}
       >
-        ``
         <Typography
           variant="h3"
           color={"white"}

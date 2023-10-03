@@ -26,10 +26,9 @@ export default function Header() {
         justifyContent={"space-between"}
         mb={2}
       >
-        <Grid display={"flex"} direction={"column"} item xs={12} sm={4}>
+        <Grid display={"flex"} direction={"column"} item xs={12} sm={5} md={4}>
           <Grid bgcolor={"#AFB5B9"} display={{ xs: "block", sm: "none" }}>
             <MenuIcon
-              // display={{ xs: "none", sm: "none" }}
               sx={{
                 height: "47px",
                 width: "47px",
@@ -42,25 +41,25 @@ export default function Header() {
           <Grid
             display={"flex"}
             justifyContent={"center"}
-            px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
-            mt={3}
+            px={{ xs: 4, sm: 0, md: 2, lg: 12, xl: 16 }}
+            mt={4}
           >
             <img
-              width={"100%"}
-              height={100}
+              height={80}
+              width={280}
               alt={"Image"}
               src={"/assets/icon/applogo.png"}
             ></img>
           </Grid>
         </Grid>
-        <Grid xs={12} sm={4}></Grid>
+        <Grid xs={12} sm={2} md={4}></Grid>
         <Grid
-          // px={10}
           display={"flex"}
           direction={"column"}
           mt={3}
           xs={12}
-          sm={4}
+          sm={5}
+          md={4}
           item
           px={{ xs: 8, sm: 2, md: 6, lg: 12, xl: 16 }}
           textAlign={"center"}

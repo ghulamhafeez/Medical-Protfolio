@@ -4,16 +4,16 @@ import Link from "next/link";
 import { TabsData } from "../constants/Constant";
 import Typography from "@mui/material/Typography";
 export default function Tabs() {
-  console.log("TabsData", TabsData);
   return (
     <Grid
       display={{ xs: "none", sm: "flex" }}
       flexWrap={"wrap"}
       pt={2}
       pb={1}
-      px={{ sm: 2, md: 5, lg: 22, xl: 26 }}
+      px={{ sm: 2, md: 5, lg: 22, xl: 28 }}
       bgcolor={"white"}
       visibility={{}}
+      justifyContent={"center"}
     >
       {TabsData?.map((x) => {
         return (

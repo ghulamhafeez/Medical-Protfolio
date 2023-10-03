@@ -1,4 +1,3 @@
-import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -23,7 +22,6 @@ export default function SecuredReferral() {
     email: Yup.string().required("Email is required"),
     surName: Yup.string().required("Sur Name is required"),
     dayPhone: Yup.string().required("Day Phone is required"),
-
     dentistName: Yup.string().required("Dentist Name is required"),
     dentistPhone: Yup.string().required("Dentist Phone is required"),
     notes: Yup.string().required("Notes is required"),
@@ -59,7 +57,6 @@ export default function SecuredReferral() {
     validateOnBlur: false,
 
     onSubmit: (values, { resetForm }) => {
-      console.log("called");
       const data = {
         firstName: values.firstName,
         surName: values.surName,
