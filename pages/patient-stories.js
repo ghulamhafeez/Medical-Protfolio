@@ -42,7 +42,7 @@ export default function PatientStories({ stories }) {
           color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Patient Stories
+          Testimonials
         </Typography>
       </Grid>
       <Backdrop
@@ -83,7 +83,7 @@ export default function PatientStories({ stories }) {
             </Grid>
             <Grid item xs={12} sm={6} px={3} mt={4}>
               <Typography variant="body1" color={"#333333"} mb={4}>
-                {text.value}
+                {text?.value}
               </Typography>
             </Grid>
           </Grid>

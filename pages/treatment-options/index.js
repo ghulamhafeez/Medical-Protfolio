@@ -87,22 +87,20 @@ export default function TreatmentOptions(props) {
         {treatmentOption?.map((x) => {
           return (
             <Grid item direction={"column"} key={x}>
-              <img
-                loading="lazy"
-                src={`${FIRST_PATH}${x.headerFile}`}
-                alt="iamge"
-                width={"100%"}
-                height={280}
-              ></img>
+              <Link href={`treatment-options/treatment-option-detail/${x.id}`}>
+                <img
+                  loading="lazy"
+                  src={`${FIRST_PATH}${x.headerFile}`}
+                  alt="iamge"
+                  width={"100%"}
+                  height={280}
+                ></img>
 
-              <Typography variant="h6" color={"#333333"}>
-                <Link
-                  href={`treatment-options/treatment-option-detail/${x.id}`}
-                >
+                <Typography variant="h6" color={"#333333"}>
                   {" "}
                   {x.title}
-                </Link>
-              </Typography>
+                </Typography>
+              </Link>
             </Grid>
           );
         })}

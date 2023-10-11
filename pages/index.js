@@ -1,10 +1,11 @@
 import Head from "next/head";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import { supabase } from "./api/supabase";
 import { Navigation } from "swiper";
 import { Grid, Button, Box } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
+import { FIRST_PATH } from "../constants/Constant";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/grid";
@@ -15,12 +16,27 @@ import { homeData, PatientStoriesData } from "../constants/Constant";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [open, setOpen] = useState(true);
+  const [homeImg, setHomeImg] = useState();
 
   useEffect(() => {
+    getAboutData();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
+
+  const getAboutData = () => {
+    supabase
+      .from("authentication")
+      .select()
+      .eq("email", "drharis@test.com")
+      .single()
+      .then((response) => {
+        console.log("response", response?.data);
+        setHomeImg(response?.data?.homeImg);
+      });
+  };
+
   return (
     <Grid>
       <Head>
@@ -47,10 +63,15 @@ export default function Home() {
       </Backdrop>
       <Grid mt={2}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
-          {homeData?.map((x) => {
+          {homeImg?.map((x) => {
             return (
               <SwiperSlide key={x}>
-                <img src={x?.url} alt="iamge" width="100%" />
+                <img
+                  src={`${FIRST_PATH}${x}`}
+                  alt="iamge"
+                  width={"100%"}
+                  height={600}
+                />
               </SwiperSlide>
             );
           })}
