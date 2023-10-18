@@ -33,7 +33,7 @@ export default function Home() {
       .single()
       .then((response) => {
         console.log("response", response?.data);
-        setHomeImg(response?.data?.homeImg);
+        setHomeImg(response?.data?.items);
       });
   };
 
@@ -67,7 +67,7 @@ export default function Home() {
             return (
               <SwiperSlide key={x}>
                 <img
-                  src={`${FIRST_PATH}${x}`}
+                  src={`${FIRST_PATH}${x.value}`}
                   alt="iamge"
                   width={"100%"}
                   height={600}
