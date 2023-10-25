@@ -39,7 +39,9 @@ export const Footer = () => {
             FOLLOW US
           </Typography>
 
-          <Link href={"https://www.facebook.com/"}>
+          <Link
+            href={"https://www.facebook.com/profile.php?id=100072352893536"}
+          >
             <FacebookOutlinedIcon
               sx={{
                 fontSize: 45,
