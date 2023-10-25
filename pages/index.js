@@ -61,7 +61,7 @@ export default function Home() {
           ></img>
         </Grid>
       </Backdrop>
-      <Grid mt={2}>
+      <Grid mt={1}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {homeImg?.map((x) => {
             return (
@@ -70,7 +70,7 @@ export default function Home() {
                   src={`${FIRST_PATH}${x.value}`}
                   alt="iamge"
                   width={"100%"}
-                  height={600}
+                  height={650}
                 />
               </SwiperSlide>
             );
