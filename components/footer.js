@@ -52,7 +52,11 @@ export const Footer = () => {
               }}
             ></FacebookOutlinedIcon>
           </Link>
-          <Link href={"https://www.instagram.com/"}>
+          <Link
+            href={
+              "https://www.instagram.com/emaddinn/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"
+            }
+          >
             <InstagramIcon
               sx={{
                 fontSize: 45,
