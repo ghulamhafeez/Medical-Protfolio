@@ -1,6 +1,7 @@
 import Head from "next/head";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { supabase } from "./api/supabase";
 import { Navigation } from "swiper";
 import { Grid, Button, Box } from "@mui/material";
@@ -16,7 +17,7 @@ import { homeData, PatientStoriesData } from "../constants/Constant";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [open, setOpen] = useState(true);
-  const [homeImg, setHomeImg] = useState();
+  const [aboutData, setAboutData] = useState();
 
   useEffect(() => {
     getAboutData();
@@ -33,7 +34,8 @@ export default function Home() {
       .single()
       .then((response) => {
         console.log("response", response?.data);
-        setHomeImg(response?.data?.items);
+
+        setAboutData(response?.data?.items);
       });
   };
 
@@ -63,15 +65,19 @@ export default function Home() {
       </Backdrop>
       <Grid mt={1}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
-          {homeImg?.map((x) => {
+          {aboutData?.map((x) => {
+            console.log("x", x);
             return (
               <SwiperSlide key={x}>
-                <img
-                  src={`${FIRST_PATH}${x.value}`}
-                  alt="iamge"
-                  width={"100%"}
-                  height={650}
-                />
+                <Link href={x.url}>
+                  <img
+                    src={`${FIRST_PATH}${x.value}`}
+                    alt="iamge"
+                    width={"100%"}
+                    height={650}
+                    // onClick={(x) => redirect(x?.url)}
+                  />
+                </Link>
               </SwiperSlide>
             );
           })}
