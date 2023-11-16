@@ -13,7 +13,7 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from "@mui/material/Typography";
-import { homeData, PatientStoriesData } from "../constants/Constant";
+import { PatientStoriesData } from "../constants/Constant";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [open, setOpen] = useState(true);
@@ -75,7 +75,6 @@ export default function Home() {
                     alt="iamge"
                     width={"100%"}
                     height={650}
-                    // onClick={(x) => redirect(x?.url)}
                   />
                 </Link>
               </SwiperSlide>
@@ -154,14 +153,6 @@ export default function Home() {
             <h3>For Children</h3>
           </Link>
         </Grid>
-        {/* <Box
-          sx={{
-            position: "absolute",
-            background: "red",
-            width: "500px",
-            height: 500,
-          }}
-        ></Box> */}
       </Grid>
 
       <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
