@@ -5,7 +5,29 @@ import Link from "next/link";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useState, useEffect } from "react";
+import { supabase } from "../pages/api/supabase";
+
 export const Footer = () => {
+  const [phone, setPhone] = useState();
+  const [address, setAddress] = useState();
+  useEffect(() => {
+    getAboutData();
+  }, []);
+
+  const getAboutData = () => {
+    supabase
+      .from("authentication")
+      .select()
+      .eq("email", "drharis@test.com")
+      .single()
+      .then((response) => {
+        console.log("response", response?.data);
+
+        setPhone(response?.data?.phoneNo);
+        setAddress(response?.data?.address);
+      });
+  };
   return (
     <Grid textAlign={"center"} bgcolor={"#333333"}>
       <Grid container pt={3} flexWrap={"wrap"}>
@@ -28,10 +50,10 @@ export const Footer = () => {
             VISIT US
           </Typography>
           <Typography variant="h6" gutterBottom color={"#C0BAB2"}>
-            (480) 325-7500
+            {phone}
           </Typography>
           <Typography variant="h6" gutterBottom color={"#C0BAB2"}>
-            Lister House, 11-12 <br></br>Wimpole Street,
+            {address}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
