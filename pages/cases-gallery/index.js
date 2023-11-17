@@ -65,7 +65,7 @@ export default function CasesGallery({ cases }) {
       </Backdrop>
       <CasesGalleryTabs></CasesGalleryTabs>
 
-      <Grid px={{ xs: 1, sm: 6, md: 14, lg: 20, xl: 26 }} mt={2}>
+      <Grid px={{ xs: 0, sm: 6, md: 16, lg: 28, xl: 34 }} mt={2}>
         {cases?.map((x) => {
           return (
             <Grid
@@ -82,10 +82,15 @@ export default function CasesGallery({ cases }) {
                 <Grid mt={2}>
                   {x.beforeFile.map((x) => {
                     return (
-                      <Grid key={x}>
+                      <Grid
+                        key={x}
+                        sx={{
+                          height: { xs: "100px", sm: "200px" },
+                        }}
+                      >
                         <img
                           width={"100%"}
-                          height={270}
+                          height={"100%"}
                           object-fit="cover"
                           src={`${FIRST_PATH}${x}`}
                           multiple
@@ -103,10 +108,15 @@ export default function CasesGallery({ cases }) {
                 <Grid mt={2}>
                   {x.afterFile.map((x) => {
                     return (
-                      <Grid key={x}>
+                      <Grid
+                        key={x}
+                        sx={{
+                          height: { xs: "100px", sm: "200px" },
+                        }}
+                      >
                         <img
                           width={"100%"}
-                          height={270}
+                          height={"100%"}
                           object-fit="cover"
                           src={`${FIRST_PATH}${x}`}
                           multiple
