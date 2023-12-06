@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.css";
+/* eslint-disable @next/next/no-img-element */
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { PatientStoriesData } from "../constants/Constant";
@@ -6,7 +6,6 @@ import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
 import { FIRST_PATH } from "../constants/Constant";
-/* eslint-disable @next/next/no-img-element */
 
 export const getServerSideProps = async () => {
   const res = await supabase

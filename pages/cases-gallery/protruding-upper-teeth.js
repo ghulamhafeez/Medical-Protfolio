@@ -1,11 +1,11 @@
-import styles from "../../styles/Home.module.css";
+/* eslint-disable @next/next/no-img-element */
 import { Grid } from "@mui/material";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Backdrop from "@mui/material/Backdrop";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { Crowding } from "../../constants/Constant";
-/* eslint-disable @next/next/no-img-element */
+
 export default function ProtrudingUpperTeeth() {
   const [open, setOpen] = useState(true);
 

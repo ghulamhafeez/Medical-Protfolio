@@ -7,7 +7,6 @@ import { Field } from "../../../components/Field";
 
 export default function TreatmentOptionDetail() {
   const [treatmentOption, setTreatmentOption] = React.useState();
-
   const router = useRouter();
   const { id } = router.query;
 

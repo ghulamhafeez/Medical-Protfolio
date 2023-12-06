@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -5,9 +6,8 @@ import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import { supabase } from "./api/supabase";
 import CardHeader from "@mui/material/CardHeader";
-
 import { FIRST_PATH } from "../constants/Constant";
-/* eslint-disable @next/next/no-img-element */
+
 export const getServerSideProps = async () => {
   const res = await supabase
     .from("transformation")

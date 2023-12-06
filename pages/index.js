@@ -1,7 +1,6 @@
 import Head from "next/head";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { supabase } from "./api/supabase";
 import { Navigation } from "swiper";
 import { Grid, Button, Box } from "@mui/material";
@@ -34,7 +33,6 @@ export default function Home() {
       .single()
       .then((response) => {
         console.log("response", response?.data);
-
         setAboutData(response?.data?.items);
       });
   };
@@ -66,7 +64,6 @@ export default function Home() {
       <Grid mt={1}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {aboutData?.map((x) => {
-            console.log("x", x);
             return (
               <SwiperSlide key={x}>
                 <Link href={x.url}>

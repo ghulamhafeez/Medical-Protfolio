@@ -29,8 +29,6 @@ export default function BlogDetail() {
   };
   return (
     <Grid>
-      {/* {blogs?.map((x) => { */}
-
       <Grid>
         <Grid
           bgcolor={"#89C1CB"}

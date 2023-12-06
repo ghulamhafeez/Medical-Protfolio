@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "../../styles/Home.module.css";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -5,7 +6,7 @@ import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import { useEffect, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
-/* eslint-disable @next/next/no-img-element */
+
 export default function Restorative() {
   const [open, setOpen] = useState(true);
 

@@ -3,10 +3,6 @@ import React from "react";
 
 export const Youtube = ({ data }) => {
   const videoId = data?.split("=");
-  console.log("id", videoId[1]);
-  //   console.log({ videoId });
-
-  //   const searchParams = new URLSearchParams(paramsString);
 
   return (
     <Grid>

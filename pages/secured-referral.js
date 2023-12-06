@@ -85,7 +85,7 @@ export default function SecuredReferral() {
         .from("secured_referral")
         .insert(data)
         .then((response) => {
-          console.log("responseS", response);
+          console.log("response", response);
         });
       resetForm({
         firstName: "",

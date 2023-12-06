@@ -1,11 +1,11 @@
-import styles from "../../styles/Home.module.css";
+/* eslint-disable @next/next/no-img-element */
 import { Grid } from "@mui/material";
 import { Crowding } from "../../constants/Constant";
 import CasesGalleryTabs from "../../components/CasesGalleryTabs";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
-/* eslint-disable @next/next/no-img-element */
+
 export default function ProtrudingLowerTeeth() {
   const [open, setOpen] = useState(true);
 
