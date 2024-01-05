@@ -24,7 +24,7 @@ export default function MainLayout({ children }) {
         zIndex={10}
         gap={1}
       >
-        <Fab
+        {/* <Fab
           sx={{
             mt: 1,
             color: "white",
@@ -36,7 +36,7 @@ export default function MainLayout({ children }) {
           // onClick={handlePopoverOpen}
         >
           <AddRoundedIcon> </AddRoundedIcon>
-        </Fab>
+        </Fab> */}
         <ChatMessage></ChatMessage>
       </Grid>
       <Footer></Footer>
