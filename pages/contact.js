@@ -10,13 +10,29 @@ import * as Yup from "yup";
 
 export default function Contact() {
   const [open, setOpen] = useState(true);
+  const [phone, setPhone] = useState();
+  const [address, setAddress] = useState();
 
   useEffect(() => {
+    getAboutData();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
+  const getAboutData = () => {
+    supabase
+      .from("authentication")
+      .select()
+      .eq("email", "drharis@test.com")
+      .single()
+      .then((response) => {
+        console.log("response", response?.data);
+
+        setPhone(response?.data?.sPhoneNo);
+        setAddress(response?.data?.sAddress);
+      });
+  };
   const schema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string().required("Email is required"),
@@ -96,6 +112,13 @@ export default function Contact() {
       </Backdrop>
       <Grid>
         <Grid textAlign={"center"}>
+          {/* <Typography
+            variant="h6"
+            gutterBottom
+            fontSize={{ xs: "15px", sm: "18px", md: "18px", lg: "20px" }}
+          >
+            <b>Email:</b> info@ektorgrammatopoulos.com
+          </Typography> */}
           <Typography
             variant="h6"
             gutterBottom
@@ -107,28 +130,14 @@ export default function Contact() {
               xl: "20px",
             }}
           >
-            <b>Telephone:</b> 020 7935 0357
+            <b>Phone:</b> {phone}
           </Typography>
           <Typography
             variant="h6"
             gutterBottom
             fontSize={{ xs: "15px", sm: "18px", md: "18px", lg: "20px" }}
           >
-            <b>Email:</b> info@ektorgrammatopoulos.com
-          </Typography>
-          <Typography
-            variant="h6"
-            gutterBottom
-            fontSize={{ xs: "15px", sm: "18px", md: "18px", lg: "20px" }}
-          >
-            Dr Ektor Grammatopoulos <br></br> Lister House
-          </Typography>
-          <Typography
-            variant="h6"
-            gutterBottom
-            fontSize={{ xs: "15px", sm: "18px", md: "18px", lg: "20px" }}
-          >
-            11-12 Wimpole <br></br>Street London <br></br> W1G 9ST
+            <b>Address:</b> {address}
           </Typography>
         </Grid>
         <form onSubmit={handleSubmit}>

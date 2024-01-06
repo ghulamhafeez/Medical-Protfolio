@@ -24,19 +24,6 @@ export default function MainLayout({ children }) {
         zIndex={10}
         gap={1}
       >
-        {/* <Fab
-          sx={{
-            mt: 1,
-            color: "white",
-            backgroundColor: "#89C1CB",
-            ":hover": {
-              backgroundColor: "#89C1CB",
-            },
-          }}
-          // onClick={handlePopoverOpen}
-        >
-          <AddRoundedIcon> </AddRoundedIcon>
-        </Fab> */}
         <ChatMessage></ChatMessage>
       </Grid>
       <Footer></Footer>

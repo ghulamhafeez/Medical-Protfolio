@@ -41,7 +41,7 @@ export default function CasesGallery({ cases }) {
           color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Crowding
+          Transformation
         </Typography>
       </Grid>
       <Backdrop
@@ -61,7 +61,6 @@ export default function CasesGallery({ cases }) {
           ></img>
         </Grid>
       </Backdrop>
-      <CasesGalleryTabs></CasesGalleryTabs>
 
       <Grid px={{ xs: 0, sm: 6, md: 16, lg: 28, xl: 34 }} mt={2}>
         {cases?.map((x) => {

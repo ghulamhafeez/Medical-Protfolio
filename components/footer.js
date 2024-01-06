@@ -24,8 +24,8 @@ export const Footer = () => {
       .then((response) => {
         console.log("response", response?.data);
 
-        setPhone(response?.data?.phoneNo);
-        setAddress(response?.data?.address);
+        setPhone(response?.data?.pPhoneNo);
+        setAddress(response?.data?.pAddress);
       });
   };
   return (
