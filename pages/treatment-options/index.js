@@ -81,8 +81,8 @@ export default function TreatmentOptions(props) {
         flexWrap={"wrap"}
         direction={"row"}
         mb={6}
-        px={{ xs: 1, sm: 22, md: 8, lg: 34, xl: 40 }}
-        spacing={4}
+        px={{ xs: 0, sm: 25, md: 14, lg: 40, xl: 48 }}
+        spacing={5}
       >
         {treatmentOption?.map((x) => {
           return (
@@ -92,7 +92,7 @@ export default function TreatmentOptions(props) {
                   loading="lazy"
                   src={`${FIRST_PATH}${x.headerFile}`}
                   alt="iamge"
-                  width={"100%"}
+                  width={375}
                   height={280}
                 ></img>
 
