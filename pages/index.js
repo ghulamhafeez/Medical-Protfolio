@@ -14,7 +14,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from "@mui/material/Typography";
 import { PatientStoriesData } from "../constants/Constant";
 import { useEffect, useState } from "react";
-export default function Home() {
+
+export const getServerSideProps = async () => {
+  const res = await supabase
+    .from("blog")
+    .select()
+    .order("id", { ascending: false });
+
+  console.log("res", res.data);
+  const blogs = res.data;
+
+  return { props: { blogs } };
+};
+
+export default function Home({ blogs }) {
   const [open, setOpen] = useState(true);
   const [aboutData, setAboutData] = useState();
 
@@ -79,65 +92,58 @@ export default function Home() {
           })}
         </Swiper>
       </Grid>
-
-      <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
-        {PatientStoriesData.map((x) => {
-          return (
-            <SwiperSlide key={x}>
+      <Grid mt={10} mb={2}>
+        <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
+          {blogs?.map((x) => {
+            const textDescription = x.items.find((x) => x.type === "text");
+            return (
               <Grid
+                key={x}
                 container
                 display={"flex"}
                 direction={"row"}
                 px={{ xs: 2, sm: 5, md: 10, lg: 20 }}
-                spacing={4}
-                pt={5}
-                pb={5}
+                mb={4}
               >
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} pb={4}>
                   <img
                     loading="lazy"
-                    src={x.src}
+                    src={`${FIRST_PATH}${x.headerFile}`}
                     alt="iamge"
                     width={"100%"}
                   ></img>
                 </Grid>
-                <Grid item xs={12} sm={6} textAlign={"left"}>
-                  <Typography
-                    variant="h6"
-                    color={"#333333"}
-                    pb={4}
-                    mt={18}
-                    textAlign={"left"}
-                    ml={8}
-                  >
-                    {x.story}
+                <Grid item xs={12} sm={6} pt={5} px={10}>
+                  <Typography variant="h5" color={"#333333"}>
+                    {x.title}
                   </Typography>
 
-                  <Link href={"/patient-stories"}>
+                  <Typography variant="body1" color={"#333333"} mt={6}>
+                    {textDescription?.value ?? ""}
+                  </Typography>
+                  <Link href={`blog/blog-detail/${x.id}`}>
                     <Button
                       sx={{
-                        backgroundColor: "#AFB5B9",
+                        mt: 4,
                         borderRadius: 0,
+                        backgroundColor: "#AFB5B9",
                         color: "white",
-                        pt: 2,
-                        ml: 8,
+
                         ":hover": {
                           backgroundColor: "#89C1CB",
                         },
                       }}
                       variant="contained"
                     >
-                      <Typography gutterBottom fontSize={15}>
-                        Read More
-                      </Typography>
+                      read more
                     </Button>
                   </Link>
                 </Grid>
               </Grid>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+            );
+          })}
+        </Swiper>
+      </Grid>
     </Grid>
   );
 }
