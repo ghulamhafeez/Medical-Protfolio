@@ -74,7 +74,7 @@ export default function Home({ blogs }) {
           ></img>
         </Grid>
       </Backdrop>
-      <Grid mt={1}>
+      <Grid>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {aboutData?.map((x) => {
             return (
@@ -84,7 +84,9 @@ export default function Home({ blogs }) {
                     src={`${FIRST_PATH}${x.value}`}
                     alt="iamge"
                     width={"100%"}
-                    height={650}
+                    style={{
+                      maxHeight: 600,
+                    }}
                   />
                 </Link>
               </SwiperSlide>
@@ -113,7 +115,7 @@ export default function Home({ blogs }) {
                     width={"100%"}
                   ></img>
                 </Grid>
-                <Grid item xs={12} sm={6} pt={5} px={10}>
+                <Grid item xs={12} sm={6} px={{ sm: 6, md: 10 }} pt={{ md: 5 }}>
                   <Typography variant="h5" color={"#333333"}>
                     {x.title}
                   </Typography>
