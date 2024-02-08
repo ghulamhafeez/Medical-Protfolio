@@ -18,7 +18,7 @@ export const TabsData = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Treatment Options", path: "/treatment-options" },
-  { name: "Transformations", path: "/cases-gallery" },
+  { name: "Cases", path: "/cases-gallery" },
   // { name: "Transformation", path: "/transformation" },
   { name: "Testimonials", path: "/patient-stories" },
   { name: "Blog", path: "/blog" },

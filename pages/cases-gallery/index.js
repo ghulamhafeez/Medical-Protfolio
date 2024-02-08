@@ -41,7 +41,7 @@ export default function CasesGallery({ cases }) {
           color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Transformation
+          Cases
         </Typography>
       </Grid>
       <Backdrop

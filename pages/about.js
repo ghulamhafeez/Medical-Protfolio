@@ -21,7 +21,8 @@ export default function About({ authentication }) {
   const [open, setOpen] = useState(true);
   const [bio, setBio] = useState(authentication?.bio);
   const [avatarImg, setAvatarImg] = useState(authentication?.avatarImg);
-
+  const [specialty, setSpecialty] = useState(authentication?.specialty);
+  const [name, setName] = useState(authentication?.nmae);
   useEffect(() => {
     getAboutData();
     setTimeout(() => {
@@ -36,9 +37,9 @@ export default function About({ authentication }) {
       .eq("email", "drharis@test.com")
       .single()
       .then((response) => {
-        console.log("response", response?.data);
-
         setBio(response?.data?.bio);
+        setName(response?.data?.name);
+        setSpecialty(response?.data?.specialty);
         setAvatarImg(response?.data?.avatarImg);
       });
   };
@@ -50,23 +51,25 @@ export default function About({ authentication }) {
           color={"white"}
           fontSize={{ xs: "30px", sm: "30px", md: "40px", lg: "40px" }}
         >
-          Dr Ektor Grammatopoulos
+          {name}
+          {/* Dr Ektor Grammatopoulos */}
         </Typography>
         <Typography
           variant="h6"
           color={"white"}
           fontSize={{ xs: "18px", sm: "18px", md: "22px", lg: "25px" }}
         >
-          Specialist and Consultant Orthodontist
+          {specialty}
+          {/* Specialist and Consultant Orthodontist */}
         </Typography>
-        <Typography
+        {/* <Typography
           variant="body2"
           color={"white"}
           fontSize={{ xs: "15px", sm: "15px", md: "15px", lg: "15px" }}
         >
           BDS MFDS RCPSG MPHIL(Orth) MORTH RCSED FDS(ORTH) RCSED PGCert(KCL)
           FHEA
-        </Typography>
+        </Typography> */}
       </Grid>
       <Backdrop
         sx={{
