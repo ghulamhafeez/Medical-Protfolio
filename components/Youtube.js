@@ -1,20 +1,16 @@
-import { Grid } from "@mui/material";
 import React from "react";
 
 export const Youtube = ({ data }) => {
+  console.log("dt", data);
   const videoId = data?.split("=");
-
+  console.log("videoId", videoId);
   return (
-    <Grid>
-      <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </Grid>
+    <iframe
+      width={"100%"}
+      height={450}
+      src={`https://www.youtube.com/embed/${videoId[1]}`}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe>
   );
 };

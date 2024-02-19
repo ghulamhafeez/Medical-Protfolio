@@ -18,7 +18,6 @@ export const getServerSideProps = async () => {
 
   console.log("res", res.data);
   const blogs = res.data;
-
   return { props: { blogs } };
 };
 
@@ -91,7 +90,9 @@ export default function Blog({ blogs }) {
               </Typography>
 
               <Typography variant="body1" color={"#333333"} mt={6}>
-                {textDescription?.value ?? ""}
+                {textDescription?.value.length > 100
+                  ? textDescription?.value.slice(0, 100) + "..."
+                  : textDescription?.value}
               </Typography>
               <Link href={`blog/blog-detail/${x.id}`}>
                 <Button
