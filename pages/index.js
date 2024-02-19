@@ -79,9 +79,9 @@ export default function Home({ blogs }) {
           {aboutData?.map((x) => {
             return (
               <SwiperSlide key={x}>
-                <Link href={x.url}>
+                <Link href={x?.url}>
                   <img
-                    src={`${FIRST_PATH}${x.value}`}
+                    src={`${FIRST_PATH}${x?.value}`}
                     alt="iamge"
                     width={"100%"}
                     style={{
@@ -97,7 +97,7 @@ export default function Home({ blogs }) {
       <Grid mt={10} mb={2}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {blogs?.map((x) => {
-            const textDescription = x.items.find((x) => x.type === "text");
+            const textDescription = x?.items.find((x) => x?.type === "text");
             return (
               <Grid
                 key={x}
@@ -110,20 +110,22 @@ export default function Home({ blogs }) {
                 <Grid item xs={12} sm={6} pb={4}>
                   <img
                     loading="lazy"
-                    src={`${FIRST_PATH}${x.headerFile}`}
+                    src={`${FIRST_PATH}${x?.headerFile}`}
                     alt="iamge"
                     width={"100%"}
                   ></img>
                 </Grid>
                 <Grid item xs={12} sm={6} px={{ sm: 6, md: 10 }} pt={{ md: 5 }}>
                   <Typography variant="h5" color={"#333333"}>
-                    {x.title}
+                    {x?.title}
                   </Typography>
 
                   <Typography variant="body1" color={"#333333"} mt={6}>
-                    {textDescription?.value ?? ""}
+                    {textDescription?.value.length > 100
+                      ? textDescription?.value.slice(0, 100) + "..."
+                      : textDescription?.value}
                   </Typography>
-                  <Link href={`blog/blog-detail/${x.id}`}>
+                  <Link href={`blog/blog-detail/${x?.id}`}>
                     <Button
                       sx={{
                         mt: 4,
