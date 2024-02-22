@@ -15,52 +15,15 @@ export const homeData = [
 ];
 
 export const TabsData = [
-  { name: "Home", path: "/" },
+  { name: "Home", path: "/home" },
   { name: "About", path: "/about" },
   { name: "Treatment Options", path: "/treatment-options" },
-  { name: "Cases", path: "/cases-gallery" },
+  { name: "Transformation", path: "/transformation" },
   // { name: "Transformation", path: "/transformation" },
   { name: "Testimonials", path: "/patient-stories" },
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
   { name: "Secured Referral", path: "/secured-referral" },
-];
-export const CasesGalleryData = [
-  { name: "Crowding", path: "/" },
-  { name: "Deep Bite", path: "/cases-gallery/deep-bite" },
-  {
-    name: "Protruding Lower Teeth",
-    path: "/cases-gallery/protruding-lower-teeth",
-  },
-  {
-    name: "Protruding Upper Teeth",
-    path: "/cases-gallery/protruding-upper-teeth",
-  },
-  { name: "Restorative", path: "/cases-gallery/restorative" },
-  { name: "Spaced Teeth", path: "/cases-gallery/spaced-teeth" },
-];
-
-export const PatientStoriesData = [
-  {
-    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/01/Kid-1.jpg",
-    story:
-      "As the parent of a son who underwent treatment, I am delighted to recommend the practice and Ektor Grammatopoulos",
-  },
-  {
-    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/Lady-1.jpg",
-    story:
-      "Dr Ektor Grammatopoulos carried out my husband’s orthodontic treatment nearly ten years ago and I recently completed my orthodontic treatment with him",
-  },
-  {
-    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2019/02/sm-2000019.jpg",
-    story:
-      "Dr Ektor Grammatopoulos treated R. for her severe overbite and misaligned teeth. As a mother, I was very impressed with his overall outstanding work in giving R a perfect smile",
-  },
-  {
-    src: "https://www.ektorgrammatopoulos.com/wp-content/uploads/2020/04/iudnrvtw.jpeg",
-    story:
-      "Dr Ektor Grammatopoulos carried out my husband’s orthodontic treatment I have been so pleased with my orthodontic treatment from start to finish and the results are exactly what I was hoping for and more.",
-  },
 ];
 
 export const Crowding = [
