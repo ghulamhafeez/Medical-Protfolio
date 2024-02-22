@@ -15,7 +15,7 @@ export const homeData = [
 ];
 
 export const TabsData = [
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Treatment Options", path: "/treatment-options" },
   { name: "Transformation", path: "/transformation" },
