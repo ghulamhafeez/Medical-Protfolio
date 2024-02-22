@@ -73,21 +73,6 @@ export default function Header() {
                 ":hover": {
                   backgroundColor: "#89C1CB",
                 },
-              }}
-              variant="contained"
-            >
-              Schedule Appointment
-            </Button>
-          </Grid>
-          <Grid>
-            <Button
-              sx={{
-                backgroundColor: "#AFB5B9",
-                color: "white",
-                width: "100%",
-                ":hover": {
-                  backgroundColor: "#89C1CB",
-                },
                 mt: 2,
               }}
               variant="contained"
