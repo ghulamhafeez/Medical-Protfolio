@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, TextareaAutosize } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Backdrop from "@mui/material/Backdrop";
@@ -190,9 +190,11 @@ export default function Contact() {
               error={errors.phone}
               helperText={errors.phone ?? ""}
             />
-            <TextField
+            <TextareaAutosize
               id="outlined-basic"
+              aria-label="minimum height"
               label="Enquiry"
+              minRows={8}
               name="enquiry"
               variant="outlined"
               sx={{ width: "100%" }}
@@ -201,6 +203,7 @@ export default function Contact() {
               onBlur={handleBlur}
               error={errors.enquiry}
               helperText={errors.enquiry ?? ""}
+              placeholder="Enquiry"
             />
             <Grid>
               <Button

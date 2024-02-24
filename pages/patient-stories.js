@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { PatientStoriesData } from "../constants/Constant";
 import Backdrop from "@mui/material/Backdrop";
 import { useEffect, useState } from "react";
 import { supabase } from "./api/supabase";
