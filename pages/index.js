@@ -32,24 +32,34 @@ export default function Home({ blogs }) {
   const [aboutData, setAboutData] = useState();
 
   useEffect(() => {
-    getAboutData();
+    getHomeData();
     setTimeout(() => {
       setOpen(false);
     }, 500);
   }, []);
 
-  const getAboutData = () => {
-    supabase
-      .from("authentication")
+  // const getAboutData = () => {
+  //   supabase
+  //     .from("authentication")
+  //     .select()
+  //     .eq("email", "drharis@test.com")
+  //     .single()
+  //     .then((response) => {
+  //       console.log("response", response?.data);
+  //       setAboutData(response?.data?.items);
+  //     });
+  // };
+  const getHomeData = async () => {
+    const res = await supabase
+      .from("home")
       .select()
-      .eq("email", "drharis@test.com")
-      .single()
+      .select()
+      .order("id", { ascending: false })
       .then((response) => {
-        console.log("response", response?.data);
-        setAboutData(response?.data?.items);
+        console.log("re", response);
+        setAboutData(response?.data?.[0].items);
       });
   };
-
   return (
     <Grid>
       <Head>
