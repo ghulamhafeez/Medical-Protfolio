@@ -21,6 +21,10 @@ export default function About({ authentication }) {
   const [open, setOpen] = useState(true);
   const [bio, setBio] = useState(authentication?.bio);
   const [avatarImg, setAvatarImg] = useState(authentication?.avatarImg);
+  const [avatarWidth, setAvatarWidth] = useState("");
+  const [avatarHeight, setAvatarHeight] = useState("");
+  const [teammate, setTeammate] = useState();
+
   const [specialty, setSpecialty] = useState(authentication?.specialty);
   const [name, setName] = useState(authentication?.nmae);
   useEffect(() => {
@@ -37,10 +41,14 @@ export default function About({ authentication }) {
       .eq("email", "drharis@test.com")
       .single()
       .then((response) => {
+        console.log("test", response);
         setBio(response?.data?.bio);
         setName(response?.data?.name);
+        setTeammate(response?.data?.items);
         setSpecialty(response?.data?.specialty);
         setAvatarImg(response?.data?.avatarImg);
+        setAvatarWidth(response?.data?.width);
+        setAvatarHeight(response?.data?.height);
       });
   };
   return (
@@ -83,6 +91,8 @@ export default function About({ authentication }) {
           <img
             width={"100%"}
             height={100}
+            // width={avatarWidth}
+            // height={avatarHeight}
             alt={"Image"}
             src={"/assets/icon/applogo.png"}
           ></img>
@@ -110,6 +120,39 @@ export default function About({ authentication }) {
         <Grid item xs={12} sm={8} md={8} lg={8} mb={6}>
           <Typography pb={2}>{bio}</Typography>
         </Grid>
+      </Grid>
+      <Typography display={"flex"} justifyContent={"center"} variant="h3">
+        Teammates
+      </Typography>
+      <Grid
+        container
+        flexWrap={"wrap"}
+        direction={"row"}
+        px={{ xs: 3, sm: 6, md: 15, lg: 24, xl: 30 }}
+        spacing={6}
+        mb={4}
+        mt={2}
+      >
+        {teammate?.map((x) => {
+          console.log("x", x);
+          return (
+            <>
+              <Grid item xs={12} sm={4} md={4} lg={4}>
+                <img
+                  loading="lazy"
+                  src={`${FIRST_PATH}${x.value}`}
+                  width={"100%"}
+                  height={"320px"}
+                  alt={"Thumbnail"}
+                ></img>
+                <Typography pb={2} display={"flex"} justifyContent={"center"}>
+                  <b>{x.title}</b>
+                </Typography>
+              </Grid>
+              {/* <Grid item xs={12} sm={8} md={8} lg={8} mb={6}></Grid> */}
+            </>
+          );
+        })}
       </Grid>
     </Grid>
   );
