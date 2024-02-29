@@ -142,14 +142,13 @@ export default function About({ authentication }) {
                   loading="lazy"
                   src={`${FIRST_PATH}${x.value}`}
                   width={"100%"}
-                  height={"320px"}
+                  // height={"320px"}
                   alt={"Thumbnail"}
                 ></img>
-                <Typography pb={2} display={"flex"} justifyContent={"center"}>
-                  <b>{x.title}</b>
-                </Typography>
               </Grid>
-              {/* <Grid item xs={12} sm={8} md={8} lg={8} mb={6}></Grid> */}
+              <Grid item xs={12} sm={8} md={8} lg={8} mb={6}>
+                <Typography pb={2}>{x.title}</Typography>
+              </Grid>
             </>
           );
         })}
