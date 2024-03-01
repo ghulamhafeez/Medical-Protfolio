@@ -30,6 +30,7 @@ export const getServerSideProps = async () => {
 export default function Home({ blogs }) {
   const [open, setOpen] = useState(true);
   const [aboutData, setAboutData] = useState();
+  const [revolvingData, setRevolvingData] = useState();
 
   useEffect(() => {
     getHomeData();
@@ -58,6 +59,7 @@ export default function Home({ blogs }) {
       .then((response) => {
         console.log("re", response);
         setAboutData(response?.data?.[0].items);
+        setRevolvingData(response?.data?.[0].revolvingItems);
       });
   };
   return (
@@ -84,7 +86,21 @@ export default function Home({ blogs }) {
           ></img>
         </Grid>
       </Backdrop>
-      <Grid>
+      <Grid mb={4} mt={2}>
+        <div className="author_logo">
+          {revolvingData?.map((x, index) => (
+            <img
+              key={index}
+              src={`${FIRST_PATH}${x?.value}`}
+              alt="iamge"
+              width={"30%"}
+              height={300}
+              className="carousel_item"
+            />
+          ))}
+        </div>
+      </Grid>
+      <Grid mb={5} mt={2}>
         <Swiper navigation={true} modules={[Navigation]} slidesPerView={1}>
           {aboutData?.map((x) => {
             return (

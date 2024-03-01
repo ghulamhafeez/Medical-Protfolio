@@ -12,3 +12,26 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.author_logo {
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 60px;
+}
+
+.carousel_item {
+  animation: carousel 60s linear infinite;
+}
+
+@keyframes carousel {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(calc(-250px * 6));
+
+  }
+}
