@@ -21,8 +21,10 @@ export default function About({ authentication }) {
   const [open, setOpen] = useState(true);
   const [bio, setBio] = useState(authentication?.bio);
   const [avatarImg, setAvatarImg] = useState(authentication?.avatarImg);
-  const [avatarWidth, setAvatarWidth] = useState("");
-  const [avatarHeight, setAvatarHeight] = useState("");
+  const [avatarWidth, setAvatarWidth] = useState();
+  const [avatarHeight, setAvatarHeight] = useState();
+  const [defaultWidth, setDefaultWidth] = useState();
+  const [defaultHeight, setDefaultHeight] = useState();
   const [teammate, setTeammate] = useState();
 
   const [specialty, setSpecialty] = useState(authentication?.specialty);
@@ -49,6 +51,8 @@ export default function About({ authentication }) {
         setAvatarImg(response?.data?.avatarImg);
         setAvatarWidth(response?.data?.width);
         setAvatarHeight(response?.data?.height);
+        setDefaultWidth(response?.data?.d_width);
+        setDefaultHeight(response?.data?.d_height);
       });
   };
   return (
@@ -87,16 +91,15 @@ export default function About({ authentication }) {
         }}
         open={open}
       >
-        <Grid>
+        {/* <Grid>
           <img
-            width={"100%"}
-            height={100}
-            // width={avatarWidth}
-            // height={avatarHeight}
+            // width={"100%"}
+            // height={100}
+
             alt={"Image"}
             src={"/assets/icon/applogo.png"}
           ></img>
-        </Grid>
+        </Grid> */}
       </Backdrop>
 
       <Grid
@@ -112,8 +115,8 @@ export default function About({ authentication }) {
           <img
             loading="lazy"
             src={`${FIRST_PATH}${avatarImg}`}
-            width={"100%"}
-            height={"320px"}
+            width={avatarWidth ? avatarWidth : defaultWidth}
+            height={avatarHeight ? avatarHeight : defaultHeight}
             alt={"Thumbnail"}
           ></img>
         </Grid>
